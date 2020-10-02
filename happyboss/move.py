@@ -1,7 +1,8 @@
 """Interact with Pointer"""
 
-from typing import Tuple
+from typing import Tuple, Callable
 from random import randrange
+from time import sleep
 
 from pyautogui import size, moveTo
 
@@ -43,8 +44,35 @@ class Pointer:
     def _move_pointer(self, x_coordinate: int, y_coordinate: int) -> None:
         moveTo(x=x_coordinate, y=y_coordinate, duration=self._motion_time)
 
+    def _random_movement(self) -> None:
+        while True:
+            try:
+                x_move_to: int
+                y_move_to: int
+                x_move_to, y_move_to = self._get_random_coordinates()
+                self._move_pointer(x_coordinate=x_move_to, y_coordinate=y_move_to)
+                sleep(self._sleep_time)
+            except KeyboardInterrupt:
+                break
+
+    def _squared_movement(self):
+        corners = self._get_square_coordinates()
+        while True:
+            try:
+                for corner in corners:
+                    x_move_to: int
+                    y_move_to: int
+                    x_move_to, y_move_to = corner
+                    self._move_pointer(x_coordinate=x_move_to, y_coordinate=y_move_to)
+                    sleep(self._sleep_time)
+            except KeyboardInterrupt:
+                break
+
     def move_the_mouse_pointer(self) -> None:
         try:
-            pass
-        except KeyboardInterrupt:
-            pass
+            movement_method: Callable = {
+                "random": self._random_movement,
+                "square": self._squared_movement,
+            }[self._movement]()
+        except KeyError:
+            raise
