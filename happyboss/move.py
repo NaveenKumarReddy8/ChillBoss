@@ -70,7 +70,7 @@ class Pointer:
 
     def move_the_mouse_pointer(self) -> None:
         try:
-            movement_method: Callable = {
+            {
                 "random": self._random_movement,
                 "square": self._squared_movement,
             }[self._movement]()
