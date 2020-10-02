@@ -2,8 +2,10 @@
 
 import argparse
 
-allowed_shapes: tuple = ("square", "triangle", "random")
+allowed_movements: tuple = ("random", "square")
 
 parser = argparse.ArgumentParser(
     description="Accept command line arguments for making the boss happy"
 )
+
+
