@@ -29,6 +29,29 @@ def test_get_random_coordinates(pointer):
     [
         (500, 300, 50, ((475, 275), (525, 275), (525, 325), (475, 325))),
         (1000, 1500, 100, ((950, 1450), (1050, 1450), (1050, 1550), (950, 1550))),
+        (
+            SCREEN_WIDTH // 2,
+            SCREEN_LENGTH // 2,
+            DEFAULT_LENGTH,
+            (
+                (
+                    SCREEN_WIDTH // 2 - DEFAULT_LENGTH // 2,
+                    SCREEN_LENGTH // 2 - DEFAULT_LENGTH // 2,
+                ),
+                (
+                    SCREEN_WIDTH // 2 + DEFAULT_LENGTH // 2,
+                    SCREEN_LENGTH // 2 - DEFAULT_LENGTH // 2,
+                ),
+                (
+                    SCREEN_WIDTH // 2 + DEFAULT_LENGTH // 2,
+                    SCREEN_LENGTH // 2 + DEFAULT_LENGTH // 2,
+                ),
+                (
+                    SCREEN_WIDTH // 2 - DEFAULT_LENGTH // 2,
+                    SCREEN_LENGTH // 2 + DEFAULT_LENGTH // 2,
+                ),
+            ),
+        ),
     ],
 )
 def test_get_square_coordinates(x_center, y_center, length, result, pointer):
@@ -40,3 +63,11 @@ def test_get_square_coordinates(x_center, y_center, length, result, pointer):
     assert corners[1] == result[1]
     assert corners[2] == result[2]
     assert corners[3] == result[3]
+    
+
+def test_move_pointer(mocker, pointer):
+    pass
+    
+    
+def test_random_movement(mocker, pointer):
+    pass
