@@ -1,6 +1,6 @@
 """Interact with Pointer"""
 
-from typing import Tuple, Callable
+from typing import Tuple
 from random import randrange
 from time import sleep
 
