@@ -55,7 +55,7 @@ class Pointer:
             except KeyboardInterrupt:
                 break
 
-    def _squared_movement(self):
+    def _squared_movement(self) -> None:
         corners = self._get_square_coordinates()
         while True:
             try:

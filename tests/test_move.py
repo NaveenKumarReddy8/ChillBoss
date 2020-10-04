@@ -10,12 +10,12 @@ DEFAULT_LENGTH: int = 100
 
 
 @pytest.fixture()
-def pointer(mocker: MockerFixture):
+def pointer(mocker: MockerFixture) -> Pointer:
     mocker.patch("happyboss.move.size", return_value=(SCREEN_WIDTH, SCREEN_LENGTH))
     return Pointer()
 
 
-def test_get_random_coordinates(pointer):
+def test_get_random_coordinates(pointer:Pointer) -> None:
     random_x_coordinate: int
     random_y_coordinate: int
     random_x_coordinate, random_y_coordinate = pointer._get_random_coordinates()
@@ -54,7 +54,7 @@ def test_get_random_coordinates(pointer):
         ),
     ],
 )
-def test_get_square_coordinates(x_center, y_center, length, result, pointer):
+def test_get_square_coordinates(x_center: int, y_center: int, length: int, result, pointer) -> None:
     pointer._x_center: int = x_center
     pointer._y_center: int = y_center
     pointer._length: int = length
@@ -63,11 +63,60 @@ def test_get_square_coordinates(x_center, y_center, length, result, pointer):
     assert corners[1] == result[1]
     assert corners[2] == result[2]
     assert corners[3] == result[3]
-    
 
-def test_move_pointer(mocker, pointer):
-    pass
-    
-    
-def test_random_movement(mocker, pointer):
-    pass
+
+def test_move_pointer(mocker, pointer) -> None:
+    mocked_moveTo = mocker.patch("happyboss.move.moveTo")
+    pointer._move_pointer(mocker.Mock(), mocker.Mock())
+    mocked_moveTo.assert_called_once()
+
+
+def test_random_movement(mocker, pointer) -> None:
+    mocker.patch(
+        "happyboss.move.Pointer._get_random_coordinates",
+        return_value=(mocker.Mock(), mocker.Mock()),
+    )
+    side_effects_by_move_pointer = [None, None, None, None, KeyboardInterrupt]
+    mocked_move_pointer = mocker.patch(
+        "happyboss.move.Pointer._move_pointer",
+        side_effect=side_effects_by_move_pointer,
+    )
+    mocker.patch("happyboss.move.sleep")
+
+    pointer._random_movement()
+
+    assert mocked_move_pointer.call_count == len(side_effects_by_move_pointer)
+
+
+def test_squared_movement(mocker, pointer) -> None:
+    mocker.patch(
+        "happyboss.move.Pointer._get_square_coordinates",
+        return_value=((mocker.Mock(), mocker.Mock()) for i in range(4)),
+    )
+    side_effects_by_move_pointer = [None, None, None, KeyboardInterrupt]
+    mocked_move_pointer = mocker.patch(
+        "happyboss.move.Pointer._move_pointer",
+        side_effect=side_effects_by_move_pointer,
+    )
+    mocker.patch("happyboss.move.sleep")
+
+    pointer._squared_movement()
+
+    assert mocked_move_pointer.call_count == len(side_effects_by_move_pointer)
+
+
+@pytest.mark.parametrize(
+    "movement, movement_method",
+    [("random", "_random_movement"), ("square", "_squared_movement")],
+)
+def test_move_the_mouse_pointer(movement, movement_method, mocker, pointer) -> None:
+    mocked_movement_method = mocker.patch(f"happyboss.move.Pointer.{movement_method}")
+    pointer._movement = movement
+    pointer.move_the_mouse_pointer()
+    mocked_movement_method.assert_called_once()
+
+
+def test_move_the_mouse_pointer_for_new_kind_of_movement(mocker, pointer) -> None:
+    with pytest.raises(KeyError):
+        pointer._movement = "triangle"
+        pointer.move_the_mouse_pointer()
