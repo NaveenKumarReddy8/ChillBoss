@@ -8,9 +8,13 @@ SCREEN_LENGTH: int = 750
 
 DEFAULT_LENGTH: int = 100
 
+@pytest.fixture()
+def display_env(monkeypatch):
+    monkeypatch.setenv("DISPLAY", ":0")
+
 
 @pytest.fixture()
-def pointer(mocker: MockerFixture) -> Pointer:
+def pointer(display_env, mocker: MockerFixture) -> Pointer:
     mocker.patch("happyboss.move.size", return_value=(SCREEN_WIDTH, SCREEN_LENGTH))
     return Pointer()
 
