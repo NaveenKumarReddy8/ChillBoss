@@ -7,7 +7,6 @@ authors = ["NaveenKumarReddy8 <mr.naveen8@gmail.com>"]
 [tool.poetry.dependencies]
 python = "^3.7"
 PyAutogui = "^0.9.50"
-pytest-cov = "^2.10.1"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
