@@ -25,7 +25,7 @@ jobs:
       shell: bash
       run: |
         python -m pip install poetry
-        echo poetry --version
+        echo The Poetry version installed is `poetry --version`
         python -m poetry config virtualenvs.in-project true
         
         
