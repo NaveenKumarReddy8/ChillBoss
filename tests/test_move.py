@@ -13,7 +13,7 @@ def display_env(monkeypatch):
 
 
 @pytest.fixture()
-def pointer(display_env, mocker: MockerFixture) -> Pointer:
+def pointer(display_env, mocker: MockerFixture):
     mocker.patch("happyboss.move.size", return_value=(SCREEN_WIDTH, SCREEN_LENGTH))
     return Pointer()
 
