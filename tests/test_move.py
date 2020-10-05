@@ -1,7 +1,6 @@
 import pytest
 from pytest_mock import MockerFixture
 
-from happyboss.move import Pointer
 
 SCREEN_WIDTH: int = 1000
 SCREEN_LENGTH: int = 750
@@ -19,7 +18,7 @@ def pointer(display_env, mocker: MockerFixture) -> Pointer:
     return Pointer()
 
 
-def test_get_random_coordinates(pointer: Pointer) -> None:
+def test_get_random_coordinates() -> None:
     random_x_coordinate: int
     random_y_coordinate: int
     random_x_coordinate, random_y_coordinate = pointer._get_random_coordinates()
