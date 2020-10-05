@@ -73,7 +73,7 @@ class Pointer:
                 break
 
     def move_the_mouse_pointer(self) -> None:
-        """Adapter to call movement method accodringly."""
+        """Adapter to call movement method accordingly."""
         try:
             {
                 "random": self._random_movement,
