@@ -5,7 +5,7 @@ description = ""
 authors = ["NaveenKumarReddy8 <mr.naveen8@gmail.com>"]
 
 [tool.poetry.dependencies]
-python = "^3.7"
+python = "^3.6"
 PyAutogui = "^0.9.50"
 
 [tool.poetry.dev-dependencies]
