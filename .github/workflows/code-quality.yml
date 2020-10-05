@@ -23,7 +23,10 @@ jobs:
         
     - name: Configure poetry environment
       shell: bash
-      run: python -m poetry config virtualenvs.in-project true
+      run: |
+        python -m pip install poetry
+        echo poetry --version
+        python -m poetry config virtualenvs.in-project true
         
         
     - name: Install dependencies
