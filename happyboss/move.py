@@ -8,6 +8,8 @@ from pyautogui import size, moveTo
 
 
 class Pointer:
+    """Driver for mouse pointer movement."""
+
     def __init__(
         self,
         movement: str = "random",
@@ -22,8 +24,6 @@ class Pointer:
         self._x_pixels: int
         self._y_pixels: int
         self._x_pixels, self._y_pixels = size()
-        self._x_center: int = self._x_pixels // 2
-        self._y_center: int = self._y_pixels // 2
 
     def _get_random_coordinates(self) -> Tuple[int, int]:
         random_x_pixel: int = randrange(start=0, stop=self._x_pixels)
@@ -34,15 +34,19 @@ class Pointer:
         self,
     ) -> Tuple[Tuple[int, int], Tuple[int, int], Tuple[int, int], Tuple[int, int]]:
         half_length: int = self._length // 2
+        x_center: int = self._x_pixels // 2
+        y_center: int = self._y_pixels // 2
+        if (
+            x_center + half_length >= self._x_pixels
+            or y_center + half_length >= self._y_pixels
+        ):
+            raise ValueError("Pixels out of bound of the screen")
         return (
-            (self._x_center - half_length, self._y_center - half_length),
-            (self._x_center + half_length, self._y_center - half_length),
-            (self._x_center + half_length, self._y_center + half_length),
-            (self._x_center - half_length, self._y_center + half_length),
+            (x_center - half_length, y_center - half_length),
+            (x_center + half_length, y_center - half_length),
+            (x_center + half_length, y_center + half_length),
+            (x_center - half_length, y_center + half_length),
         )
-
-    def _move_pointer(self, x_coordinate: int, y_coordinate: int) -> None:
-        moveTo(x=x_coordinate, y=y_coordinate, duration=self._motion_time)
 
     def _random_movement(self) -> None:
         while True:
@@ -50,12 +54,12 @@ class Pointer:
                 x_move_to: int
                 y_move_to: int
                 x_move_to, y_move_to = self._get_random_coordinates()
-                self._move_pointer(x_coordinate=x_move_to, y_coordinate=y_move_to)
+                moveTo(x=x_move_to, y=y_move_to, duration=self._motion_time)
                 sleep(self._sleep_time)
             except KeyboardInterrupt:
                 break
 
-    def _squared_movement(self):
+    def _squared_movement(self) -> None:
         corners = self._get_square_coordinates()
         while True:
             try:
@@ -63,16 +67,20 @@ class Pointer:
                     x_move_to: int
                     y_move_to: int
                     x_move_to, y_move_to = corner
-                    self._move_pointer(x_coordinate=x_move_to, y_coordinate=y_move_to)
+                    moveTo(x=x_move_to, y=y_move_to, duration=self._motion_time)
                     sleep(self._sleep_time)
             except KeyboardInterrupt:
                 break
 
     def move_the_mouse_pointer(self) -> None:
+        """Adapter to call movement method accodringly."""
         try:
             {
                 "random": self._random_movement,
                 "square": self._squared_movement,
             }[self._movement]()
         except KeyError:
+            print(
+                f"No {self._movement} movement applicable"
+            )  # TODO: Would be replaced with logging
             raise
