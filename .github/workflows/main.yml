@@ -48,6 +48,4 @@ jobs:
     
     - name: Test using Pytest
       shell: bash
-      run: |
-        export DISPLAY=:0
-        poetry run pytest -v tests/
+      run: poetry run pytest -v tests/
