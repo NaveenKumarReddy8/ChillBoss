@@ -24,6 +24,10 @@ def mock_pyautogui(mocker,monkeypatch):
     def mocked_move():
         return mocker.Mock()
     
+    def mocked_init():
+        return None
+        
+    monkeypatch.setattr(pyautogui, "__init__", mocked_init)
     monkeypatch.setattr(pyautogui, "size", mocked_data)
     monkeypatch.setattr(pyautogui, "moveTo", mocked_move)
     
