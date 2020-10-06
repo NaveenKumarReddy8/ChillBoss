@@ -10,10 +10,9 @@ DEFAULT_LENGTH: int = 100
 
 @pytest.fixture()
 def pointer(mocker: MockerFixture):
-    mocker.patch("pyautogui.size")
+    mocker.patch("pyautogui.size", return_value=(SCREEN_WIDTH, SCREEN_LENGTH))
     mocker.patch("pyautogui.moveTo")
     from happyboss.move import Pointer
-    mocker.patch("happyboss.move.size", return_value=(SCREEN_WIDTH, SCREEN_LENGTH))
     return Pointer()
 
 
