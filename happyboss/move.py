@@ -7,6 +7,7 @@ from time import sleep
 from pyautogui import size, moveTo
 
 
+
 class Pointer:
     """Driver for mouse pointer movement."""
 

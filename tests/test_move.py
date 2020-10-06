@@ -7,13 +7,9 @@ SCREEN_LENGTH: int = 750
 
 DEFAULT_LENGTH: int = 100
 
-@pytest.fixture()
-def display_env(monkeypatch):
-    monkeypatch.setenv("DISPLAY", ":0")
-
 
 @pytest.fixture()
-def pointer(display_env, mocker: MockerFixture):
+def pointer(mocker: MockerFixture):
     mocker.patch("pyautogui.size")
     mocker.patch("pyautogui.moveTo")
     from happyboss.move import Pointer
@@ -21,7 +17,7 @@ def pointer(display_env, mocker: MockerFixture):
     return Pointer()
 
 
-def test_get_random_coordinates() -> None:
+def test_get_random_coordinates(pointer) -> None:
     random_x_coordinate: int
     random_y_coordinate: int
     random_x_coordinate, random_y_coordinate = pointer._get_random_coordinates()
