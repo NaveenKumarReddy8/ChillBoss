@@ -26,7 +26,9 @@ def mock_pyautogui(mocker,monkeypatch):
     
     def mocked_init():
         return None
-        
+    
+    for item in dir(pyautogui):
+        monkeypatch.setattr(pyautogui, item, mocker.Mock)
     monkeypatch.setattr(pyautogui, "__init__", mocked_init)
     monkeypatch.setattr(pyautogui, "size", mocked_data)
     monkeypatch.setattr(pyautogui, "moveTo", mocked_move)
