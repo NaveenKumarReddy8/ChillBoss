@@ -1,7 +1,7 @@
+import sys
+
 import pytest
 from pytest_mock import MockerFixture
-
-from happyboss.move import Pointer
 
 SCREEN_WIDTH: int = 1000
 SCREEN_LENGTH: int = 750
@@ -9,13 +9,25 @@ SCREEN_LENGTH: int = 750
 DEFAULT_LENGTH: int = 100
 
 
+class BogusPyautoguiModule:
+    @staticmethod
+    def size(*args, **kwargs):
+        return SCREEN_WIDTH, SCREEN_LENGTH
+
+    @staticmethod
+    def moveTo(*args, **kwargs):
+        return None
+
+
 @pytest.fixture()
-def pointer(mocker: MockerFixture) -> Pointer:
-    mocker.patch("happyboss.move.size", return_value=(SCREEN_WIDTH, SCREEN_LENGTH))
+def pointer(monkeypatch, mocker: MockerFixture):
+    monkeypatch.setitem(sys.modules, "pyautogui", BogusPyautoguiModule)
+    from happyboss.move import Pointer
+
     return Pointer()
 
 
-def test_get_random_coordinates(pointer: Pointer) -> None:
+def test_get_random_coordinates(pointer) -> None:
     random_x_coordinate: int
     random_y_coordinate: int
     random_x_coordinate, random_y_coordinate = pointer._get_random_coordinates()
@@ -87,7 +99,7 @@ def test_random_movement(mocker, pointer) -> None:
     )
     side_effects_by_moveTo = [None, None, None, None, KeyboardInterrupt]
     mocked_moveTo = mocker.patch(
-        "happyboss.move.moveTo",
+        "pyautogui.moveTo",
         side_effect=side_effects_by_moveTo,
     )
     mocker.patch("happyboss.move.sleep")
@@ -104,7 +116,7 @@ def test_squared_movement(mocker, pointer) -> None:
     )
     side_effects_by_moveTo = [None, None, None, KeyboardInterrupt]
     mocked_moveTo = mocker.patch(
-        "happyboss.move.moveTo",
+        "pyautogui.moveTo",
         side_effect=side_effects_by_moveTo,
     )
     mocker.patch("happyboss.move.sleep")
