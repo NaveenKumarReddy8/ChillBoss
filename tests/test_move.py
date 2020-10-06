@@ -24,10 +24,8 @@ def mock_pyautogui(mocker,monkeypatch):
         return mocker.Mock()
     
     def mocked_init():
-        return Nonesolute reference in datetime module: the one used in test_works().
+        return None
     
-    for item in dir(pyautogui):
-        monkeypatch.setattr(f"pyautogui.{item}", mocker.Mock)
     monkeypatch.setattr("pyautogui.__init__", mocked_init)
     monkeypatch.setattr("pyautogui.size", mocked_data)
     monkeypatch.setattr("pyautogui.moveTo", mocked_move)
