@@ -1,19 +1,36 @@
 import pytest
 from pytest_mock import MockerFixture
-
+import pyautogui
 
 SCREEN_WIDTH: int = 1000
 SCREEN_LENGTH: int = 750
 
 DEFAULT_LENGTH: int = 100
 
+class MockPyautogui:
+    @staticmethod
+    def size():
+        return SCREEN_WIDTH, SCREEN_LENGTH
+    
+    @staticmethod
+    def moveTo():
+        return
 
 @pytest.fixture()
-def pointer(mocker: MockerFixture):
-    mocker.patch("pyautogui.__init__")
-    mocker.patch("pyautogui.size", return_value=(SCREEN_WIDTH, SCREEN_LENGTH))
-    mocker.patch("pyautogui.moveTo")
-    mocker.patch("pyautogui.mouseinfo.__init__")
+def mock_pyautogui(mocker,monkeypatch):
+    def mocked_data():
+        return SCREEN_WIDTH, SCREEN_LENGTH
+    
+    def mocked_move():
+        return mocker.Mock()
+    
+    monkeypatch.setattr(pyautogui, "size", mocked_data)
+    monkeypatch.setattr(pyautogui, "moveTo", mocked_move)
+    
+    
+
+@pytest.fixture()
+def pointer(mock_pyautogui, mocker: MockerFixture):
     from happyboss.move import Pointer
     return Pointer()
 
