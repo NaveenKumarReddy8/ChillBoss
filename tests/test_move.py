@@ -1,3 +1,5 @@
+import sys
+
 import pytest
 from pytest_mock import MockerFixture
 
@@ -6,189 +8,19 @@ SCREEN_LENGTH: int = 750
 
 DEFAULT_LENGTH: int = 100
 
-
-class MockPyautogui:
+class FakeModule:
     @staticmethod
-    def size():
+    def size(*args, **kwargs):
         return SCREEN_WIDTH, SCREEN_LENGTH
-
+        
     @staticmethod
-    def moveTo():
-        return
-
-
-@pytest.fixture()
-def mock_pyautogui(mocker, monkeypatch):
-    def mocked_data():
-        return SCREEN_WIDTH, SCREEN_LENGTH
-
-    def mocked_move():
-        return mocker.Mock()
-
-    def mocked_init():
+    def moveTo(*args, **kwargs):
         return None
 
-    attributes = [
-        "FAILSAFE",
-        "FAILSAFE_POINTS",
-        "FailSafeException",
-        "G_LOG_SCREENSHOTS_FILENAMES",
-        "ImageNotFoundException",
-        "KEYBOARD_KEYS",
-        "KEY_NAMES",
-        "LEFT",
-        "LOG_SCREENSHOTS",
-        "LOG_SCREENSHOTS_LIMIT",
-        "MIDDLE",
-        "MINIMUM_DURATION",
-        "MINIMUM_SLEEP",
-        "PAUSE",
-        "PRIMARY",
-        "Point",
-        "PyAutoGUIException",
-        "QWERTY",
-        "QWERTZ",
-        "RIGHT",
-        "SECONDARY",
-        "Size",
-        "__builtins__",
-        "__cached__",
-        "__doc__",
-        "__file__",
-        "__loader__",
-        "__name__",
-        "__package__",
-        "__path__",
-        "__spec__",
-        "__version__",
-        "_bottom",
-        "_genericPyAutoGUIChecks",
-        "_getCommaToken",
-        "_getNumberToken",
-        "_getParensCommandStrToken",
-        "_getQuotedStringToken",
-        "_handlePause",
-        "_logScreenshot",
-        "_mouseMoveDrag",
-        "_normalizeButton",
-        "_normalizeXYArgs",
-        "_pyautogui_x11",
-        "_right",
-        "_runCommandList",
-        "_snapshot",
-        "_tokenizeCommandStr",
-        "absolute_import",
-        "alert",
-        "center",
-        "click",
-        "collections",
-        "collectionsSequence",
-        "confirm",
-        "contextmanager",
-        "countdown",
-        "datetime",
-        "displayMousePosition",
-        "division",
-        "doubleClick",
-        "drag",
-        "dragRel",
-        "dragTo",
-        "easeInBack",
-        "easeInBounce",
-        "easeInCirc",
-        "easeInCubic",
-        "easeInElastic",
-        "easeInExpo",
-        "easeInOutBack",
-        "easeInOutBounce",
-        "easeInOutCirc",
-        "easeInOutCubic",
-        "easeInOutElastic",
-        "easeInOutExpo",
-        "easeInOutQuad",
-        "easeInOutQuart",
-        "easeInOutQuint",
-        "easeInOutSine",
-        "easeInQuad",
-        "easeInQuart",
-        "easeInQuint",
-        "easeInSine",
-        "easeOutBack",
-        "easeOutBounce",
-        "easeOutCirc",
-        "easeOutCubic",
-        "easeOutElastic",
-        "easeOutExpo",
-        "easeOutQuad",
-        "easeOutQuart",
-        "easeOutQuint",
-        "easeOutSine",
-        "failSafeCheck",
-        "functools",
-        "getInfo",
-        "getPointOnLine",
-        "grab",
-        "hold",
-        "hotkey",
-        "hscroll",
-        "inspect",
-        "isShiftCharacter",
-        "isValidKey",
-        "keyDown",
-        "keyUp",
-        "leftClick",
-        "linear",
-        "locate",
-        "locateAll",
-        "locateAllOnScreen",
-        "locateCenterOnScreen",
-        "locateOnScreen",
-        "middleClick",
-        "mouseDown",
-        "mouseInfo",
-        "mouseUp",
-        "mouseinfo",
-        "move",
-        "moveRel",
-        "moveTo",
-        "onScreen",
-        "os",
-        "password",
-        "pixel",
-        "pixelMatchesColor",
-        "platform",
-        "platformModule",
-        "position",
-        "press",
-        "printInfo",
-        "print_function",
-        "prompt",
-        "pyscreeze",
-        "raisePyAutoGUIImageNotFoundException",
-        "re",
-        "rightClick",
-        "run",
-        "screenshot",
-        "scroll",
-        "size",
-        "sleep",
-        "sys",
-        "time",
-        "tripleClick",
-        "typewrite",
-        "useImageNotFoundException",
-        "vscroll",
-        "write",
-    ]
-    for item in attributes:
-        monkeypatch.setattr(f"pyautogui.{item}", mocker.Mock())
-    monkeypatch.setattr("pyautogui.__init__", mocked_init)
-    monkeypatch.setattr("pyautogui.size", mocked_data)
-    monkeypatch.setattr("pyautogui.moveTo", mocked_move)
-
 
 @pytest.fixture()
-def pointer(mock_pyautogui, mocker: MockerFixture):
+def pointer(mocker: MockerFixture):
+    sys.modules["pyautogui"] = FakeModule
     from happyboss.move import Pointer
 
     return Pointer()
