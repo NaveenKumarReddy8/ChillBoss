@@ -10,6 +10,7 @@ DEFAULT_LENGTH: int = 100
 
 @pytest.fixture()
 def pointer(mocker: MockerFixture):
+    mocker.patch("pyautogui.__init__")
     mocker.patch("pyautogui.size", return_value=(SCREEN_WIDTH, SCREEN_LENGTH))
     mocker.patch("pyautogui.moveTo")
     mocker.patch("pyautogui.mouseinfo.__init__")
