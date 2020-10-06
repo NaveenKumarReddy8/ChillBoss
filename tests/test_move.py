@@ -111,7 +111,7 @@ def test_random_movement(mocker, pointer) -> None:
     )
     side_effects_by_moveTo = [None, None, None, None, KeyboardInterrupt]
     mocked_moveTo = mocker.patch(
-        "happyboss.move.moveTo",
+        "pyautogui.moveTo",
         side_effect=side_effects_by_moveTo,
     )
     mocker.patch("happyboss.move.sleep")
@@ -128,7 +128,7 @@ def test_squared_movement(mocker, pointer) -> None:
     )
     side_effects_by_moveTo = [None, None, None, KeyboardInterrupt]
     mocked_moveTo = mocker.patch(
-        "happyboss.move.moveTo",
+        "pyautogui.moveTo",
         side_effect=side_effects_by_moveTo,
     )
     mocker.patch("happyboss.move.sleep")

@@ -4,7 +4,7 @@ from typing import Tuple
 from random import randrange
 from time import sleep
 
-from pyautogui import size, moveTo
+import pyautogui
 
 
 
@@ -24,7 +24,7 @@ class Pointer:
         self._motion_time: int = motion_time
         self._x_pixels: int
         self._y_pixels: int
-        self._x_pixels, self._y_pixels = size()
+        self._x_pixels, self._y_pixels = pyautogui.size()
 
     def _get_random_coordinates(self) -> Tuple[int, int]:
         random_x_pixel: int = randrange(start=0, stop=self._x_pixels)
@@ -55,7 +55,7 @@ class Pointer:
                 x_move_to: int
                 y_move_to: int
                 x_move_to, y_move_to = self._get_random_coordinates()
-                moveTo(x=x_move_to, y=y_move_to, duration=self._motion_time)
+                pyautogui.moveTo(x=x_move_to, y=y_move_to, duration=self._motion_time)
                 sleep(self._sleep_time)
             except KeyboardInterrupt:
                 break
@@ -68,7 +68,7 @@ class Pointer:
                     x_move_to: int
                     y_move_to: int
                     x_move_to, y_move_to = corner
-                    moveTo(x=x_move_to, y=y_move_to, duration=self._motion_time)
+                    pyautogui.moveTo(x=x_move_to, y=y_move_to, duration=self._motion_time)
                     sleep(self._sleep_time)
             except KeyboardInterrupt:
                 break
