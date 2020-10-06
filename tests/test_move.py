@@ -1,6 +1,5 @@
 import pytest
 from pytest_mock import MockerFixture
-import pyautogui
 
 SCREEN_WIDTH: int = 1000
 SCREEN_LENGTH: int = 750
@@ -25,13 +24,13 @@ def mock_pyautogui(mocker,monkeypatch):
         return mocker.Mock()
     
     def mocked_init():
-        return None
+        return Nonesolute reference in datetime module: the one used in test_works().
     
     for item in dir(pyautogui):
-        monkeypatch.setattr(pyautogui, item, mocker.Mock)
-    monkeypatch.setattr(pyautogui, "__init__", mocked_init)
-    monkeypatch.setattr(pyautogui, "size", mocked_data)
-    monkeypatch.setattr(pyautogui, "moveTo", mocked_move)
+        monkeypatch.setattr(f"pyautogui.{item}", mocker.Mock)
+    monkeypatch.setattr("pyautogui.__init__", mocked_init)
+    monkeypatch.setattr("pyautogui.size", mocked_data)
+    monkeypatch.setattr("pyautogui.moveTo", mocked_move)
     
     
 
