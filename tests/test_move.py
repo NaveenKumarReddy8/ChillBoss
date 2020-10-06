@@ -12,6 +12,7 @@ DEFAULT_LENGTH: int = 100
 def pointer(mocker: MockerFixture):
     mocker.patch("pyautogui.size", return_value=(SCREEN_WIDTH, SCREEN_LENGTH))
     mocker.patch("pyautogui.moveTo")
+    mocker.patch("pyautogui.mouse_info.__init__")
     from happyboss.move import Pointer
     return Pointer()
 
