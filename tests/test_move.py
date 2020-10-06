@@ -8,19 +8,20 @@ SCREEN_LENGTH: int = 750
 
 DEFAULT_LENGTH: int = 100
 
-class FakeModule:
+
+class BogusPyautoguiModule:
     @staticmethod
     def size(*args, **kwargs):
         return SCREEN_WIDTH, SCREEN_LENGTH
-        
+
     @staticmethod
     def moveTo(*args, **kwargs):
         return None
 
 
 @pytest.fixture()
-def pointer(mocker: MockerFixture):
-    sys.modules["pyautogui"] = FakeModule
+def pointer(monkeypatch, mocker: MockerFixture):
+    monkeypatch.setitem(sys.modules, "pyautogui", BogusPyautoguiModule)
     from happyboss.move import Pointer
 
     return Pointer()

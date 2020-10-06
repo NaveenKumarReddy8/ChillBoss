@@ -8,7 +8,6 @@ from time import sleep
 import pyautogui
 
 
-
 class Pointer:
     """Driver for mouse pointer movement."""
 
@@ -69,7 +68,9 @@ class Pointer:
                     x_move_to: int
                     y_move_to: int
                     x_move_to, y_move_to = corner
-                    pyautogui.moveTo(x=x_move_to, y=y_move_to, duration=self._motion_time)
+                    pyautogui.moveTo(
+                        x=x_move_to, y=y_move_to, duration=self._motion_time
+                    )
                     sleep(self._sleep_time)
             except KeyboardInterrupt:
                 break
