@@ -31,6 +31,7 @@ jobs:
         python -m pip install poetry
         echo The Poetry version installed is `poetry --version`
         python -m poetry config virtualenvs.in-project true
+        ls -a -l
         
         
     - name: Install dependencies
