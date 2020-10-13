@@ -1,5 +1,3 @@
-import sys
-
 import pytest
 from pytest_mock import MockerFixture
 
@@ -10,7 +8,7 @@ DEFAULT_LENGTH: int = 100
 
 
 @pytest.fixture()
-def pointer(monkeypatch, mocker: MockerFixture):
+def pointer(mocker: MockerFixture):
     from happyboss.move import Pointer
 
     return Pointer()
@@ -92,8 +90,6 @@ def test_random_movement(mocker, pointer) -> None:
         side_effect=side_effects_by_moveTo,
     )
     mocker.patch("happyboss.move.sleep")
-    import pdb
-    pdb.set_trace()
 
     pointer._random_movement()
 

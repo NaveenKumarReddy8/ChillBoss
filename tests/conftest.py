@@ -14,8 +14,8 @@ class BogusPyautoguiModule:
     @staticmethod
     def moveTo(*args, **kwargs):
         return None
-        
+
 
 @pytest.fixture(autouse=True)
-def pointer(monkeypatch, mocker):
+def mock_pyautogui(monkeypatch):
     monkeypatch.setitem(sys.modules, "pyautogui", BogusPyautoguiModule)

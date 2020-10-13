@@ -1,5 +1,5 @@
-from happyboss import __version__
+import happyboss
 
 
 def test_version():
-    assert __version__ == '0.1.0'
+    assert happyboss.__version__ == "0.1.0"

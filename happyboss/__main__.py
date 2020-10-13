@@ -40,5 +40,6 @@ def chill(motiontime, sleeptime, length, movement):
         obj = Pointer(movement=movement, sleep_time=sleeptime, motion_time=motiontime)
     obj.move_the_mouse_pointer()
 
+
 if __name__ == "__main__":
     chill()
