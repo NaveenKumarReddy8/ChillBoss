@@ -9,19 +9,8 @@ SCREEN_LENGTH: int = 750
 DEFAULT_LENGTH: int = 100
 
 
-class BogusPyautoguiModule:
-    @staticmethod
-    def size(*args, **kwargs):
-        return SCREEN_WIDTH, SCREEN_LENGTH
-
-    @staticmethod
-    def moveTo(*args, **kwargs):
-        return None
-
-
 @pytest.fixture()
 def pointer(monkeypatch, mocker: MockerFixture):
-    monkeypatch.setitem(sys.modules, "pyautogui", BogusPyautoguiModule)
     from happyboss.move import Pointer
 
     return Pointer()
@@ -103,6 +92,8 @@ def test_random_movement(mocker, pointer) -> None:
         side_effect=side_effects_by_moveTo,
     )
     mocker.patch("happyboss.move.sleep")
+    import pdb
+    pdb.set_trace()
 
     pointer._random_movement()
 
