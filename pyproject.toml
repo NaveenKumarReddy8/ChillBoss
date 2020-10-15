@@ -10,7 +10,7 @@ PyAutogui = "^0.9.50"
 click = "^7.1.2"
 
 [tool.poetry.dev-dependencies]
-pytest = "^5.2"
+pytest = "^6.1"
 black = "^20.8b1"
 mypy = "^0.782"
 pytest-cov = "^2.10.1"
