@@ -1,3 +1,5 @@
+"""Happyboss package."""
+
 from happyboss.move import Pointer
 
 __version__ = "0.1.0"

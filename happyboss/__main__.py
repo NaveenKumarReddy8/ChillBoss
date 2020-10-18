@@ -1,3 +1,5 @@
+"""Run Happyboss as a module."""
+
 import click
 
 from happyboss.move import Pointer
@@ -29,6 +31,7 @@ from happyboss.move import Pointer
     help="amount of sleep time till next movement.",
 )
 def chill(motiontime, sleeptime, length, movement):
+    """Start the movement of the mouse with the command line arguments passed by the user."""
     if length:
         obj = Pointer(
             movement=movement,
