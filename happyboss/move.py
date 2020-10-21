@@ -25,9 +25,12 @@ class Pointer:
         self._x_pixels: int
         self._y_pixels: int
         self._x_pixels, self._y_pixels = pyautogui.size()
-        self._length: int = (
-            length if length is not None else min(self._x_pixels, self._y_pixels) // 10
-        )
+        smaller_dimension: int = min(self._x_pixels, self._y_pixels)
+        self._length: int = length if length is not None else smaller_dimension // 10
+        if self._length > smaller_dimension and movement == "square":
+            raise ValueError(
+                f"length provided {length} is greater than display dimension for square movement. Max allowed for the current display is {smaller_dimension-1}"
+            )
 
     def _get_random_coordinates(self) -> Tuple[int, int]:
         random_x_pixel: int = randrange(start=0, stop=self._x_pixels)

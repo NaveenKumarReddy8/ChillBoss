@@ -32,7 +32,9 @@ from happyboss.move import Pointer
 )
 def chill(motiontime, sleeptime, length, movement):
     """Start the movement of the mouse with the command line arguments passed by the user."""
-    pointer = Pointer(movement=movement, sleep_time=sleeptime, motion_time=motiontime)
+    pointer = Pointer(
+        movement=movement, length=length, sleep_time=sleeptime, motion_time=motiontime
+    )
     pointer.move_the_mouse_pointer()
 
 
