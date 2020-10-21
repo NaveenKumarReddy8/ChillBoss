@@ -1,7 +1,7 @@
 """Interact with Pointer"""
 
 
-from typing import Tuple
+from typing import Tuple, Optional
 from random import randrange
 from time import sleep
 
@@ -15,17 +15,19 @@ class Pointer:
     def __init__(
         self,
         movement: str = "random",
-        length: int = 100,
+        length: Optional[int] = None,
         sleep_time: int = 30,
         motion_time: int = 0,
     ):
         self._movement: str = movement
-        self._length: int = length
         self._sleep_time: int = sleep_time
         self._motion_time: int = motion_time
         self._x_pixels: int
         self._y_pixels: int
         self._x_pixels, self._y_pixels = pyautogui.size()
+        self._length: int = (
+            length if length is not None else min(self._x_pixels, self._y_pixels) // 10
+        )
 
     def _get_random_coordinates(self) -> Tuple[int, int]:
         random_x_pixel: int = randrange(start=0, stop=self._x_pixels)
