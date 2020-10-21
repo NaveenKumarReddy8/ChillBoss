@@ -109,6 +109,8 @@ def test_squared_movement(mocker, pointer) -> None:
     mocker.patch("happyboss.move.sleep")
 
     pointer._squared_movement()
+    
+    assert mocked_moveTo.call_count == len(side_effects_by_moveTo)
 
 
 @pytest.mark.parametrize(
