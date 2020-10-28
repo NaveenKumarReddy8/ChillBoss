@@ -1,6 +1,7 @@
 """Run Happyboss as a module."""
 
 import click
+from pyfiglet import figlet_format
 
 from happyboss.move import Pointer
 
@@ -35,6 +36,7 @@ def chill(motiontime, sleeptime, length, movement):
     pointer = Pointer(
         movement=movement, length=length, sleep_time=sleeptime, motion_time=motiontime
     )
+    print(figlet_format("HappyBoss"))
     pointer.move_the_mouse_pointer()
 
 
