@@ -8,6 +8,7 @@ authors = ["NaveenKumarReddy8 <mr.naveen8@gmail.com>"]
 python = "^3.6"
 PyAutogui = "^0.9.50"
 click = "^7.1.2"
+pyfiglet = "^0.8.post1"
 
 [tool.poetry.dev-dependencies]
 pytest = "^6.1"
