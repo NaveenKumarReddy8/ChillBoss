@@ -1,9 +1,10 @@
-"""Run Happyboss as a module."""
+"""Run ChillBoss as a module."""
 
 import click
 from pyfiglet import figlet_format
 
-from happyboss.move import Pointer
+from chillboss.mouse import Pointer
+from chillboss import __version__
 
 
 @click.command()
@@ -36,7 +37,8 @@ def chill(motiontime, sleeptime, length, movement):
     pointer = Pointer(
         movement=movement, length=length, sleep_time=sleeptime, motion_time=motiontime
     )
-    print(figlet_format("HappyBoss"))
+    print(figlet_format("ChillBoss"))
+    print(f"Version: {__version__}")
     pointer.move_the_mouse_pointer()
 
 

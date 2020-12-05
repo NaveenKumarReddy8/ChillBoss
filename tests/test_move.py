@@ -9,7 +9,7 @@ DEFAULT_LENGTH: int = 100
 
 @pytest.fixture()
 def pointer(mocker: MockerFixture):
-    from happyboss.move import Pointer
+    from chillboss.mouse import Pointer
 
     return Pointer()
 
@@ -81,7 +81,7 @@ def test_get_square_coordinates_valueerror_out_of_bounds(
 
 def test_random_movement(mocker, pointer) -> None:
     mocker.patch(
-        "happyboss.move.Pointer._get_random_coordinates",
+        "chillboss.mouse.Pointer._get_random_coordinates",
         return_value=(mocker.Mock(), mocker.Mock()),
     )
     side_effects_by_moveTo = [None, None, None, None, KeyboardInterrupt]
@@ -89,7 +89,7 @@ def test_random_movement(mocker, pointer) -> None:
         "pyautogui.moveTo",
         side_effect=side_effects_by_moveTo,
     )
-    mocker.patch("happyboss.move.sleep")
+    mocker.patch("chillboss.mouse.sleep")
 
     pointer._random_movement()
 
@@ -98,7 +98,7 @@ def test_random_movement(mocker, pointer) -> None:
 
 def test_squared_movement(mocker, pointer) -> None:
     mocker.patch(
-        "happyboss.move.Pointer._get_square_coordinates",
+        "chillboss.mouse.Pointer._get_square_coordinates",
         return_value=((mocker.Mock(), mocker.Mock()) for i in range(4)),
     )
     side_effects_by_moveTo = [None, None, None, KeyboardInterrupt]
@@ -106,7 +106,7 @@ def test_squared_movement(mocker, pointer) -> None:
         "pyautogui.moveTo",
         side_effect=side_effects_by_moveTo,
     )
-    mocker.patch("happyboss.move.sleep")
+    mocker.patch("chillboss.mouse.sleep")
 
     pointer._squared_movement()
 
@@ -118,7 +118,7 @@ def test_squared_movement(mocker, pointer) -> None:
     [("random", "_random_movement"), ("square", "_squared_movement")],
 )
 def test_move_the_mouse_pointer(movement, movement_method, mocker, pointer) -> None:
-    mocked_movement_method = mocker.patch(f"happyboss.move.Pointer.{movement_method}")
+    mocked_movement_method = mocker.patch(f"chillboss.mouse.Pointer.{movement_method}")
     pointer._movement = movement
     pointer.move_the_mouse_pointer()
     mocked_movement_method.assert_called_once()
