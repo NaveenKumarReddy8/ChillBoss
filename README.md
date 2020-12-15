@@ -25,4 +25,5 @@ Command line argument accepted:
 * --sleeptime: Time to be taken till next movement. Default set to 30 seconds
 * --motiontime: Time consumption of pointer to move from present coordinates to the next coordinates. Default set to 0
   seconds.
-  ![ChillBoss Usage](https://i.imgur.com/Os7cmkk.gif)
+
+![ChillBoss Usage](https://i.imgur.com/Os7cmkk.gif)
