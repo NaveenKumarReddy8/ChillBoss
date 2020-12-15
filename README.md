@@ -8,7 +8,7 @@ Installation:
 pip install chillboss
 ```
 
-![Imgur](https://i.imgur.com/EHvbM1H.gifv)
+![ChillBoss Installation](https://i.imgur.com/EHvbM1H.gif)
 
 Usage:
 ```shell
@@ -20,4 +20,4 @@ Command line argument accepted:
 * --sleeptime: Time to be taken till next movement.
 * --motiontime: Time consumption of pointer to move from present coordinates to the next coordinates.
 
-![Imgur](https://i.imgur.com/Os7cmkk.gifv)
+![ChillBoss Usage](https://i.imgur.com/Os7cmkk.gif)
