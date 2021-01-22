@@ -1,8 +1,8 @@
 # ChillBoss
 
-[![Downloads](https://static.pepy.tech/personalized-badge/chillboss?period=total&units=none&left_color=blue&right_color=green&left_text=Downloads)](https://pepy.tech/project/chillboss)
-[![Downloads](https://static.pepy.tech/personalized-badge/chillboss?period=month&units=none&left_color=blue&right_color=green&left_text=Downloads)](https://pepy.tech/project/chillboss)
-[![Downloads](https://static.pepy.tech/personalized-badge/chillboss?period=week&units=none&left_color=blue&right_color=green&left_text=Downloads)](https://pepy.tech/project/chillboss)
+[![Downloads](https://static.pepy.tech/personalized-badge/chillboss?period=total&units=international_system&left_color=blue&right_color=green&left_text=Downloads)](https://pepy.tech/project/chillboss)
+[![Downloads](https://static.pepy.tech/personalized-badge/chillboss?period=month&units=international_system&left_color=blue&right_color=green&left_text=Downloads)](https://pepy.tech/project/chillboss)
+[![Downloads](https://static.pepy.tech/personalized-badge/chillboss?period=week&units=international_system&left_color=blue&right_color=green&left_text=Downloads)](https://pepy.tech/project/chillboss)
 
 Version: 0.1.0
 
