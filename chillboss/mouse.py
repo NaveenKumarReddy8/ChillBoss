@@ -18,6 +18,14 @@ class Pointer:
         sleep_time: int = 30,
         motion_time: int = 0,
     ):
+        """Create the object for Pointer class.
+
+        Args:
+            movement (str): Type of movement, `square` and `random` are allowed. Default to `random`.
+            length (Optional[int]): Applicable for square movement, length of edge of square in pixels.
+            sleep_time (int): Time to sleep in between consecutive movements of pointer.
+            motion_time (int): Time to be taken to move consecutive coordinates of pointer.
+        """
         self._movement: str = movement
         self._sleep_time: int = sleep_time
         self._motion_time: int = motion_time
@@ -32,6 +40,12 @@ class Pointer:
             )
 
     def _get_random_coordinates(self) -> Tuple[int, int]:
+        """Random coordinate within bounds of display.
+
+        Returns:
+            Tuple[int, int]: Random x,y pixels coordinate within the display bounds.
+
+        """
         random_x_pixel: int = randrange(start=0, stop=self._x_pixels)
         random_y_pixel: int = randrange(start=0, stop=self._y_pixels)
         return random_x_pixel, random_y_pixel
@@ -39,6 +53,12 @@ class Pointer:
     def _get_square_coordinates(
         self,
     ) -> Tuple[Tuple[int, int], Tuple[int, int], Tuple[int, int], Tuple[int, int]]:
+        """
+
+        Returns:
+            Tuple[Tuple[int, int], Tuple[int, int], Tuple[int, int], Tuple[int, int]] : Tuple consisting of tuples
+            with square coordinates.
+        """
         half_length: int = self._length // 2
         x_center: int = self._x_pixels // 2
         y_center: int = self._y_pixels // 2
@@ -55,6 +75,7 @@ class Pointer:
         )
 
     def _random_movement(self) -> None:
+        """Move the pointer in random direction until KeyBoardInterrupt."""
         while True:
             try:
                 x_move_to: int
@@ -66,6 +87,7 @@ class Pointer:
                 break
 
     def _squared_movement(self) -> None:
+        """Move the pointer in squared direction until KeyBoardInterrupt."""
         corners = self._get_square_coordinates()
         while True:
             try:

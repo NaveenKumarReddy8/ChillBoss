@@ -33,8 +33,7 @@ from chillboss.mouse import Pointer
     help="amount of sleep time till next movement.",
 )
 def chill(motiontime: int, sleeptime: int, length: int, movement: str) -> None:
-    """
-    Start the movement of the mouse with the command line arguments passed by the user.
+    """Start the movement of the mouse with the command line arguments passed by the user.
 
     Args:
         motiontime (int): Time to be taken to move consecutive coordinates of pointer.
