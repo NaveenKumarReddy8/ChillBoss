@@ -1,10 +1,9 @@
-"""Interact with Pointer"""
+"""Interact with Pointer."""
 
 
-from typing import Tuple, Optional
 from random import randrange
 from time import sleep
-
+from typing import Optional, Tuple
 
 import pyautogui
 

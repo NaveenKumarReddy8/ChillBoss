@@ -1,8 +1,11 @@
 [tool.poetry]
 name = "ChillBoss"
-version = "0.1.0"
-description = ""
+version = "0.2.0"
+description = "Let's chill, Pointer moves forever."
 authors = ["NaveenKumarReddy8 <mr.naveen8@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+repository = "https://github.com/NaveenKumarReddy8/ChillBoss"
 
 [tool.poetry.dependencies]
 python = "^3.6"
@@ -17,6 +20,8 @@ mypy = "^0.812"
 pytest-cov = "^2.11.1"
 pytest-mock = "^3.5.1"
 flake8 = "^3.8.4"
+pydocstyle = "^5.1.1"
+isort = "^5.7.0"
 
 [tool.coverage.run]
 source = ["chillboss"]
