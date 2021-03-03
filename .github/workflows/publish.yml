@@ -70,4 +70,5 @@ jobs:
         shell: bash
         run: |
           poetry config pypi-token.pypi ${{ secrets.PYPI }}
+          poetry build
           poetry publish
