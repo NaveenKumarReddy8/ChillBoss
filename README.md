@@ -3,8 +3,11 @@
 [![Downloads](https://static.pepy.tech/personalized-badge/chillboss?period=total&units=international_system&left_color=blue&right_color=green&left_text=Total%20Downloads)](https://pepy.tech/project/chillboss)
 [![Downloads](https://static.pepy.tech/personalized-badge/chillboss?period=month&units=international_system&left_color=blue&right_color=green&left_text=Downloads/Month)](https://pepy.tech/project/chillboss)
 [![Downloads](https://static.pepy.tech/personalized-badge/chillboss?period=week&units=international_system&left_color=blue&right_color=green&left_text=Downloads/Week)](https://pepy.tech/project/chillboss)
+[![Hygiene](https://github.com/NaveenKumarReddy8/ChillBoss/actions/workflows/main.yml/badge.svg)](https://github.com/NaveenKumarReddy8/ChillBoss/actions/workflows/main.yml)
+[![chillboss](https://snyk.io/advisor/python/chillboss/badge.svg)](https://snyk.io/advisor/python/chillboss)
+[![PyPI version fury.io](https://badge.fury.io/py/chillboss.svg)](https://pypi.python.org/pypi/chillboss/)
 
-Version: 0.1.0
+Version: 0.2.0
 
 ChillBoss keeps your mouse moving to keep your status alive.
 
