@@ -24,19 +24,20 @@ jobs:
       with:
         python-version: ${{ matrix.python-version }}
         
-        
     - name: Configure poetry environment
       shell: bash
       run: |
         python -m pip install poetry
         echo The Poetry version installed is `poetry --version`
         python -m poetry config virtualenvs.in-project true
-        
+
+    - name: Check for valid pyproject.toml
+      shell: bash
+      run: poetry check
         
     - name: Install dependencies
       shell: bash
       run: python -m poetry install
-        
         
     - name: Lint with flake8
       run: |
@@ -44,8 +45,7 @@ jobs:
         poetry run flake8 --count --select=E9,F63,F7,F82 --show-source --statistics
         # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
         poetry run flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
-    
-    
+
     - name: Test using Pytest
       shell: bash
       run: poetry run pytest -v tests/
