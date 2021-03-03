@@ -26,6 +26,9 @@ jobs:
           echo The Poetry version installed is `poetry --version`
           python -m poetry config virtualenvs.in-project true
 
+      - name: Check for valid pyproject.toml
+        shell: bash
+        run: poetry check
 
       - name: Install dependencies
         shell: bash
@@ -49,12 +52,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Check for pyproject.toml config
+      - name: Configure poetry environment
         shell: bash
         run: |
           python -m pip install poetry
           echo The Poetry version installed is `poetry --version`
           python -m poetry config virtualenvs.in-project true
+
+      - name: Check for valid pyproject.toml
+        shell: bash
+        run: poetry check
 
       - name: Install dependencies
         shell: bash
