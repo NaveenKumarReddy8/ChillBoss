@@ -6,17 +6,14 @@
 Welcome to ChillBoss's documentation!
 =====================================
 
-ChillBoss
-=========
-
-|Downloads| |Downloads| |Downloads| |Hygiene| |chillboss| |PyPI version
-fury.io|
+|TotalDownloads| |MonthlyDownloads| |WeeklyDownloads| |Hygiene| |chillboss| |PyPI version fury.io|
 
 Version: 0.2.0
 
 ChillBoss keeps your mouse moving to keep your status alive.
 
-Installation:
+Installation
+============
 
 .. code:: shell
 
@@ -25,8 +22,8 @@ Installation:
 .. figure:: https://i.imgur.com/EHvbM1H.gif
    :alt: ChillBoss Installation
 
-   ChillBoss Installation
-Usage:
+Usage
+=====
 
 .. code:: shell
 
@@ -46,13 +43,11 @@ Command line argument accepted:
 .. figure:: https://i.imgur.com/Os7cmkk.gif
    :alt: ChillBoss Usage
 
-   ChillBoss Usage
-
-.. |Downloads| image:: https://static.pepy.tech/personalized-badge/chillboss?period=total&units=international_system&left_color=blue&right_color=green&left_text=Total%20Downloads
+.. |TotalDownloads| image:: https://static.pepy.tech/personalized-badge/chillboss?period=total&units=international_system&left_color=blue&right_color=green&left_text=Total%20Downloads
    :target: https://pepy.tech/project/chillboss
-.. |Downloads| image:: https://static.pepy.tech/personalized-badge/chillboss?period=month&units=international_system&left_color=blue&right_color=green&left_text=Downloads/Month
+.. |MonthlyDownloads| image:: https://static.pepy.tech/personalized-badge/chillboss?period=month&units=international_system&left_color=blue&right_color=green&left_text=Downloads/Month
    :target: https://pepy.tech/project/chillboss
-.. |Downloads| image:: https://static.pepy.tech/personalized-badge/chillboss?period=week&units=international_system&left_color=blue&right_color=green&left_text=Downloads/Week
+.. |WeeklyDownloads| image:: https://static.pepy.tech/personalized-badge/chillboss?period=week&units=international_system&left_color=blue&right_color=green&left_text=Downloads/Week
    :target: https://pepy.tech/project/chillboss
 .. |Hygiene| image:: https://github.com/NaveenKumarReddy8/ChillBoss/actions/workflows/main.yml/badge.svg
    :target: https://github.com/NaveenKumarReddy8/ChillBoss/actions/workflows/main.yml
@@ -60,12 +55,6 @@ Command line argument accepted:
    :target: https://snyk.io/advisor/python/chillboss
 .. |PyPI version fury.io| image:: https://badge.fury.io/py/chillboss.svg
    :target: https://pypi.python.org/pypi/chillboss/
-
-.. toctree::
-   :maxdepth: 2
-   :caption: Contents:
-
-
 
 Indices and tables
 ==================
