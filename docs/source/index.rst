@@ -1,0 +1,75 @@
+.. ChillBoss documentation master file, created by
+   sphinx-quickstart on Wed Mar  3 09:41:58 2021.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+Welcome to ChillBoss's documentation!
+=====================================
+
+ChillBoss
+=========
+
+|Downloads| |Downloads| |Downloads| |Hygiene| |chillboss| |PyPI version
+fury.io|
+
+Version: 0.2.0
+
+ChillBoss keeps your mouse moving to keep your status alive.
+
+Installation:
+
+.. code:: shell
+
+    pip install chillboss
+
+.. figure:: https://i.imgur.com/EHvbM1H.gif
+   :alt: ChillBoss Installation
+
+   ChillBoss Installation
+Usage:
+
+.. code:: shell
+
+    python -m chillboss
+
+Command line argument accepted:
+
+-  --movement: ``random`` and ``square`` movements are accepted. Default
+   set to ``random``.
+-  --length: Accepted for ``square`` type of movement. Default set to
+   ``None``.
+-  --sleeptime: Time to be taken till next movement. Default set to 30
+   seconds.
+-  --motiontime: Time consumption of pointer to move from present
+   coordinates to the next coordinates. Default set to 0 seconds.
+
+.. figure:: https://i.imgur.com/Os7cmkk.gif
+   :alt: ChillBoss Usage
+
+   ChillBoss Usage
+
+.. |Downloads| image:: https://static.pepy.tech/personalized-badge/chillboss?period=total&units=international_system&left_color=blue&right_color=green&left_text=Total%20Downloads
+   :target: https://pepy.tech/project/chillboss
+.. |Downloads| image:: https://static.pepy.tech/personalized-badge/chillboss?period=month&units=international_system&left_color=blue&right_color=green&left_text=Downloads/Month
+   :target: https://pepy.tech/project/chillboss
+.. |Downloads| image:: https://static.pepy.tech/personalized-badge/chillboss?period=week&units=international_system&left_color=blue&right_color=green&left_text=Downloads/Week
+   :target: https://pepy.tech/project/chillboss
+.. |Hygiene| image:: https://github.com/NaveenKumarReddy8/ChillBoss/actions/workflows/main.yml/badge.svg
+   :target: https://github.com/NaveenKumarReddy8/ChillBoss/actions/workflows/main.yml
+.. |chillboss| image:: https://snyk.io/advisor/python/chillboss/badge.svg
+   :target: https://snyk.io/advisor/python/chillboss
+.. |PyPI version fury.io| image:: https://badge.fury.io/py/chillboss.svg
+   :target: https://pypi.python.org/pypi/chillboss/
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+
+
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
