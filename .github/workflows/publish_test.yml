@@ -1,4 +1,4 @@
-name: Publish ChillBoss
+name: Test Publish ChillBoss
 
 on:
   push:
