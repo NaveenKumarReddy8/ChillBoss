@@ -64,5 +64,5 @@ jobs:
         shell: bash
         run: |
           poetry config repositories.testpypi https://test.pypi.org/legacy/
-          poetry config 
+          poetry config pypi-token.pypi ${{ secrets.TEST_PYPI }}
           poetry publish -r testpypi
