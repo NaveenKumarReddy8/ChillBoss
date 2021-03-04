@@ -6,22 +6,27 @@
 Welcome to ChillBoss's documentation!
 =====================================
 
-|TotalDownloads| |MonthlyDownloads| |WeeklyDownloads| |Hygiene| |chillboss| |PyPI version fury.io|
+|Downloads| |MonthlyDownloads| |WeeklyDownloads| |Hygiene|
+|chillboss| |PyPI version fury.io|
 
 Version: 0.2.0
 
-ChillBoss keeps your mouse moving to keep your status alive.
+ChillBoss keeps your mouse moving to keep your status alive 😎.
 
+Homepage: https://naveenkumarreddy8.github.io/ChillBoss/
 
 Installation
 ============
+
+ChillBoss is published on PyPI: https://pypi.org/project/chillboss/
 
 .. code:: shell
 
     pip install chillboss
 
-.. figure:: https://i.imgur.com/EHvbM1H.gif
+.. figure:: https://media.giphy.com/media/gzccwAinTwGWRdkyu8/giphy.gif
    :alt: ChillBoss Installation
+
 
 
 Usage
@@ -41,11 +46,15 @@ Command line argument accepted:
    seconds.
 -  --motiontime: Time consumption of pointer to move from present
    coordinates to the next coordinates. Default set to 0 seconds.
+-  --verbose: Flag argument when given as input, sets the log level to
+   Debug, else Warning.
 
-.. figure:: https://i.imgur.com/Os7cmkk.gif
+.. figure:: https://media.giphy.com/media/DsYnp69mhQeKoAxu7x/giphy.gif
    :alt: ChillBoss Usage
 
-.. |TotalDownloads| image:: https://static.pepy.tech/personalized-badge/chillboss?period=total&units=international_system&left_color=blue&right_color=green&left_text=Total%20Downloads
+️
+
+.. |Downloads| image:: https://static.pepy.tech/personalized-badge/chillboss?period=total&units=international_system&left_color=blue&right_color=green&left_text=Total%20Downloads
    :target: https://pepy.tech/project/chillboss
 .. |MonthlyDownloads| image:: https://static.pepy.tech/personalized-badge/chillboss?period=month&units=international_system&left_color=blue&right_color=green&left_text=Downloads/Month
    :target: https://pepy.tech/project/chillboss
@@ -65,3 +74,6 @@ Indices and tables
 * :ref:`genindex`
 * :ref:`modindex`
 * :ref:`search`
+
+
+Made with love ❤️
