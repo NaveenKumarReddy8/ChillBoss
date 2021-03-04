@@ -12,6 +12,7 @@ Version: 0.2.0
 
 ChillBoss keeps your mouse moving to keep your status alive.
 
+
 Installation
 ============
 
@@ -21,6 +22,7 @@ Installation
 
 .. figure:: https://i.imgur.com/EHvbM1H.gif
    :alt: ChillBoss Installation
+
 
 Usage
 =====
@@ -55,6 +57,7 @@ Command line argument accepted:
    :target: https://snyk.io/advisor/python/chillboss
 .. |PyPI version fury.io| image:: https://badge.fury.io/py/chillboss.svg
    :target: https://pypi.python.org/pypi/chillboss/
+
 
 Indices and tables
 ==================
