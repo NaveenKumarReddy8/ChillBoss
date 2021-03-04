@@ -4,6 +4,14 @@ chillboss package
 Submodules
 ----------
 
+chillboss.loggers module
+------------------------
+
+.. automodule:: chillboss.loggers
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 chillboss.mouse module
 ----------------------
 

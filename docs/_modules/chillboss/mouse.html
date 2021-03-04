@@ -228,12 +228,14 @@
   <h1 id="modules-chillboss-mouse--page-root">Source code for chillboss.mouse</h1><div class="highlight"><pre>
 <span></span><span class="sd">"""Interact with Pointer."""</span>
 
-
+<span class="kn">import</span> <span class="nn">logging</span>
 <span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randrange</span>
 <span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep</span>
 <span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Tuple</span>
 
 <span class="kn">import</span> <span class="nn">pyautogui</span>
+
+<span class="n">logger</span><span class="p">:</span> <span class="n">logging</span><span class="o">.</span><span class="n">Logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s2">"chillboss"</span><span class="p">)</span>
 
 
 <div class="viewcode-block" id="Pointer"><a class="viewcode-back" href="../../docstrings/chillboss.html#chillboss.mouse.Pointer">[docs]</a><span class="k">class</span> <span class="nc">Pointer</span><span class="p">:</span>
@@ -263,9 +265,15 @@
         <span class="n">smaller_dimension</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_x_pixels</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_y_pixels</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_length</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">length</span> <span class="k">if</span> <span class="n">length</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">smaller_dimension</span> <span class="o">//</span> <span class="mi">10</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_length</span> <span class="o">&gt;</span> <span class="n">smaller_dimension</span> <span class="ow">and</span> <span class="n">movement</span> <span class="o">==</span> <span class="s2">"square"</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
-                <span class="sa">f</span><span class="s2">"length provided </span><span class="si">{</span><span class="n">length</span><span class="si">}</span><span class="s2"> is greater than display dimension for square movement. Max allowed for the current display is </span><span class="si">{</span><span class="n">smaller_dimension</span><span class="o">-</span><span class="mi">1</span><span class="si">}</span><span class="s2">"</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">"Given length </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_length</span><span class="si">}</span><span class="s2"> is greater than the display resolution </span><span class="si">{</span><span class="n">smaller_dimension</span><span class="si">}</span><span class="s2">. "</span>
+                <span class="sa">f</span><span class="s2">"Please enter a smaller value."</span>
             <span class="p">)</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">"Given length </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_length</span><span class="si">}</span><span class="s2"> is greater than the display resolution </span><span class="si">{</span><span class="n">smaller_dimension</span><span class="si">}</span><span class="s2">. "</span>
+                <span class="sa">f</span><span class="s2">"Please enter a smaller value."</span>
+            <span class="p">)</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Pointer class object created with attributes: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span><span class="si">}</span><span class="s2">."</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">_get_random_coordinates</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]:</span>
         <span class="sd">"""Random coordinate within bounds of display.</span>
@@ -276,6 +284,9 @@
 <span class="sd">        """</span>
         <span class="n">random_x_pixel</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">randrange</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">stop</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_x_pixels</span><span class="p">)</span>
         <span class="n">random_y_pixel</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">randrange</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">stop</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_y_pixels</span><span class="p">)</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">"Random coordinates generated are: (</span><span class="si">{</span><span class="n">random_x_pixel</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">random_y_pixel</span><span class="si">}</span><span class="s2">)."</span>
+        <span class="p">)</span>
         <span class="k">return</span> <span class="n">random_x_pixel</span><span class="p">,</span> <span class="n">random_y_pixel</span>
 
     <span class="k">def</span> <span class="nf">_get_square_coordinates</span><span class="p">(</span>
@@ -310,8 +321,10 @@
                 <span class="n">y_move_to</span><span class="p">:</span> <span class="nb">int</span>
                 <span class="n">x_move_to</span><span class="p">,</span> <span class="n">y_move_to</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_random_coordinates</span><span class="p">()</span>
                 <span class="n">pyautogui</span><span class="o">.</span><span class="n">moveTo</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">x_move_to</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">y_move_to</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_motion_time</span><span class="p">)</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Pointer moved to (</span><span class="si">{</span><span class="n">x_move_to</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">y_move_to</span><span class="si">}</span><span class="s2">)."</span><span class="p">)</span>
                 <span class="n">sleep</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_sleep_time</span><span class="p">)</span>
             <span class="k">except</span> <span class="ne">KeyboardInterrupt</span><span class="p">:</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Caught KeyBoardInterrupt."</span><span class="p">)</span>
                 <span class="k">break</span>
 
     <span class="k">def</span> <span class="nf">_squared_movement</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
@@ -326,8 +339,10 @@
                     <span class="n">pyautogui</span><span class="o">.</span><span class="n">moveTo</span><span class="p">(</span>
                         <span class="n">x</span><span class="o">=</span><span class="n">x_move_to</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">y_move_to</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_motion_time</span>
                     <span class="p">)</span>
+                    <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Pointer moved to (</span><span class="si">{</span><span class="n">x_move_to</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">y_move_to</span><span class="si">}</span><span class="s2">)."</span><span class="p">)</span>
                     <span class="n">sleep</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_sleep_time</span><span class="p">)</span>
             <span class="k">except</span> <span class="ne">KeyboardInterrupt</span><span class="p">:</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Caught KeyBoardInterrupt."</span><span class="p">)</span>
                 <span class="k">break</span>
 
 <div class="viewcode-block" id="Pointer.move_the_mouse_pointer"><a class="viewcode-back" href="../../docstrings/chillboss.html#chillboss.mouse.Pointer.move_the_mouse_pointer">[docs]</a>    <span class="k">def</span> <span class="nf">move_the_mouse_pointer</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
@@ -338,9 +353,7 @@
                 <span class="s2">"square"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_squared_movement</span><span class="p">,</span>
             <span class="p">}[</span><span class="bp">self</span><span class="o">.</span><span class="n">_movement</span><span class="p">]()</span>
         <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span>
-                <span class="sa">f</span><span class="s2">"No </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_movement</span><span class="si">}</span><span class="s2"> movement applicable"</span>
-            <span class="p">)</span>  <span class="c1"># TODO: Would be replaced with logging</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Caught KeyError for unknown movement input </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_movement</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
             <span class="k">raise</span></div></div>
 </pre></div>
 
