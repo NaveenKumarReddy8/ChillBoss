@@ -51,6 +51,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - name: Set up Python 3.6
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.6
+
       - name: Configure poetry environment
         shell: bash
         run: |
@@ -60,15 +65,15 @@ jobs:
 
       - name: Check for valid pyproject.toml
         shell: bash
-        run: poetry run poetry check
+        run: poetry check
 
       - name: Install dependencies
         shell: bash
-        run: poetry run poetry install
+        run: poetry install
 
       - name: Publish to PyPI
         shell: bash
         run: |
-          poetry run poetry config pypi-token.pypi ${{ secrets.PYPI }}
-          poetry run poetry build
-          poetry run poetry publish
+          poetry config pypi-token.pypi ${{ secrets.PYPI }}
+          poetry build
+          poetry publish
