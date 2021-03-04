@@ -6,6 +6,7 @@ authors = ["NaveenKumarReddy8 <mr.naveen8@gmail.com>"]
 license = "MIT"
 readme = "README.md"
 repository = "https://github.com/NaveenKumarReddy8/ChillBoss"
+homepage = "https://naveenkumarreddy8.github.io/ChillBoss/"
 
 [tool.poetry.dependencies]
 python = "^3.6"
