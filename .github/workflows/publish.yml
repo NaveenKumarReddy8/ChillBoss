@@ -60,15 +60,15 @@ jobs:
 
       - name: Check for valid pyproject.toml
         shell: bash
-        run: poetry check
+        run: poetry run poetry check
 
       - name: Install dependencies
         shell: bash
-        run: poetry install
+        run: poetry run poetry install
 
       - name: Publish to PyPI
         shell: bash
         run: |
-          poetry config pypi-token.pypi ${{ secrets.PYPI }}
-          poetry build
-          poetry publish
+          poetry run poetry config pypi-token.pypi ${{ secrets.PYPI }}
+          poetry run poetry build
+          poetry run poetry publish
