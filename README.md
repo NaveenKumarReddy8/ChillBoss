@@ -1,7 +1,7 @@
 # ChillBoss
 
 [![Downloads](https://static.pepy.tech/personalized-badge/chillboss?period=total&units=international_system&left_color=blue&right_color=green&left_text=Total%20Downloads)](https://pepy.tech/project/chillboss)
-[![Montyly_Downloads](https://static.pepy.tech/personalized-badge/chillboss?period=month&units=international_system&left_color=blue&right_color=green&left_text=Downloads/Month)](https://pepy.tech/project/chillboss)
+[![Monthly_Downloads](https://static.pepy.tech/personalized-badge/chillboss?period=month&units=international_system&left_color=blue&right_color=green&left_text=Downloads/Month)](https://pepy.tech/project/chillboss)
 [![Weekly_Downloads](https://static.pepy.tech/personalized-badge/chillboss?period=week&units=international_system&left_color=blue&right_color=green&left_text=Downloads/Week)](https://pepy.tech/project/chillboss)
 [![Hygiene](https://github.com/NaveenKumarReddy8/ChillBoss/actions/workflows/main.yml/badge.svg)](https://github.com/NaveenKumarReddy8/ChillBoss/actions/workflows/main.yml)
 [![chillboss](https://snyk.io/advisor/python/chillboss/badge.svg)](https://snyk.io/advisor/python/chillboss)
@@ -21,7 +21,7 @@ ChillBoss is published on PyPI: https://pypi.org/project/chillboss/
 pip install chillboss
 ```
 
-![ChillBoss Installation](https://i.imgur.com/EHvbM1H.gif)
+![ChillBoss Installation](https://media.giphy.com/media/gzccwAinTwGWRdkyu8/giphy.gif)
 
 Usage:
 
@@ -38,7 +38,7 @@ Command line argument accepted:
   seconds.
 * --verbose: Flag argument when given as input, sets the log level to Debug, else Warning.
 
-![ChillBoss Usage](https://i.imgur.com/Os7cmkk.gif)
+![ChillBoss Usage](https://media.giphy.com/media/DsYnp69mhQeKoAxu7x/giphy.gif)
 
 
 Made with love ❤️
