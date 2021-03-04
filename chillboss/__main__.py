@@ -19,25 +19,26 @@ logger: logging.Logger = logging.getLogger("chillboss")
     "--movement",
     type=click.Choice(["random", "square"], case_sensitive=False),
     default="random",
-    help="type of movement of mouse pointer.",
+    help="`random` and `square` movements are accepted. Default set to `random`",
 )
 @click.option(
     "--length",
     type=int,
     default=None,
-    help="custom length of the side of square during square movement.",
+    help="Accepted for `square` type of movement. Default set to `None`.",
 )
 @click.option(
     "--sleeptime",
     type=int,
     default=30,
-    help="amount of sleep time till next movement.",
+    help="Time to be taken till next movement. Default set to 30 seconds.",
 )
 @click.option(
     "--motiontime",
     type=int,
     default=0,
-    help="amount of sleep time till next movement.",
+    help="Time consumption of pointer to move from present coordinates to the next coordinates. "
+    "Default set to 0 seconds.",
 )
 def chill(
     motiontime: int, sleeptime: int, length: int, movement: str, verbose: bool
