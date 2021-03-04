@@ -26,10 +26,6 @@ jobs:
           echo The Poetry version installed is `poetry --version`
           python -m poetry config virtualenvs.in-project true
 
-      - name: Check for valid pyproject.toml
-        shell: bash
-        run: poetry check
-
       - name: Install dependencies
         shell: bash
         run: python -m poetry install
@@ -52,6 +48,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - name: Set up Python 3.6
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.6
+
       - name: Configure poetry environment
         shell: bash
         run: |
@@ -61,16 +62,16 @@ jobs:
 
       - name: Check for valid pyproject.toml
         shell: bash
-        run: poetry run poetry check
+        run: poetry check
 
       - name: Install dependencies
         shell: bash
-        run: poetry run poetry install
+        run: poetry install
 
       - name: Publish to Test PyPI
         shell: bash
         run: |
-          poetry run poetry config repositories.testpypi https://test.pypi.org/legacy/
-          poetry run poetry config pypi-token.pypi ${{ secrets.TEST_PYPI }}
-          poetry run poetry build
-          poetry run poetry publish -r testpypi
+          poetry config repositories.testpypi https://test.pypi.org/legacy/
+          poetry config pypi-token.pypi ${{ secrets.TEST_PYPI }}
+          poetry build
+          poetry publish -r testpypi
