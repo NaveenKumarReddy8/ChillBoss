@@ -6,12 +6,14 @@ authors = ["NaveenKumarReddy8 <mr.naveen8@gmail.com>"]
 license = "MIT"
 readme = "README.md"
 repository = "https://github.com/NaveenKumarReddy8/ChillBoss"
+homepage = "https://naveenkumarreddy8.github.io/ChillBoss/"
 
 [tool.poetry.dependencies]
 python = "^3.6"
 PyAutogui = "^0.9.50"
 click = "^7.1.2"
 pyfiglet = "^0.8.post1"
+colorama = "^0.4.4"
 
 [tool.poetry.dev-dependencies]
 pytest = "^6.2"
@@ -22,6 +24,8 @@ pytest-mock = "^3.5.1"
 flake8 = "^3.8.4"
 pydocstyle = "^5.1.1"
 isort = "^5.7.0"
+Sphinx = "^3.5.1"
+sphinx-material = {git = "https://github.com/bashtage/sphinx-material.git"}
 
 [tool.coverage.run]
 source = ["chillboss"]

@@ -1,11 +1,13 @@
 """Interact with Pointer."""
 
-
+import logging
 from random import randrange
 from time import sleep
 from typing import Optional, Tuple
 
 import pyautogui
+
+logger: logging.Logger = logging.getLogger("chillboss")
 
 
 class Pointer:
@@ -35,9 +37,15 @@ class Pointer:
         smaller_dimension: int = min(self._x_pixels, self._y_pixels)
         self._length: int = length if length is not None else smaller_dimension // 10
         if self._length > smaller_dimension and movement == "square":
-            raise ValueError(
-                f"length provided {length} is greater than display dimension for square movement. Max allowed for the current display is {smaller_dimension-1}"
+            logger.error(
+                f"Given length {self._length} is greater than the display resolution {smaller_dimension}. "
+                f"Please enter a smaller value."
             )
+            raise ValueError(
+                f"Given length {self._length} is greater than the display resolution {smaller_dimension}. "
+                f"Please enter a smaller value."
+            )
+        logger.debug(f"Pointer class object created with attributes: {self.__dict__}.")
 
     def _get_random_coordinates(self) -> Tuple[int, int]:
         """Random coordinate within bounds of display.
@@ -48,12 +56,15 @@ class Pointer:
         """
         random_x_pixel: int = randrange(start=0, stop=self._x_pixels)
         random_y_pixel: int = randrange(start=0, stop=self._y_pixels)
+        logger.info(
+            f"Random coordinates generated are: ({random_x_pixel}, {random_y_pixel})."
+        )
         return random_x_pixel, random_y_pixel
 
     def _get_square_coordinates(
         self,
     ) -> Tuple[Tuple[int, int], Tuple[int, int], Tuple[int, int], Tuple[int, int]]:
-        """
+        """Calculate square coordinates.
 
         Returns:
             Tuple[Tuple[int, int], Tuple[int, int], Tuple[int, int], Tuple[int, int]] : Tuple consisting of tuples
@@ -82,8 +93,10 @@ class Pointer:
                 y_move_to: int
                 x_move_to, y_move_to = self._get_random_coordinates()
                 pyautogui.moveTo(x=x_move_to, y=y_move_to, duration=self._motion_time)
+                logger.info(f"Pointer moved to ({x_move_to}, {y_move_to}).")
                 sleep(self._sleep_time)
             except KeyboardInterrupt:
+                logger.debug(f"Caught KeyBoardInterrupt.")
                 break
 
     def _squared_movement(self) -> None:
@@ -98,8 +111,10 @@ class Pointer:
                     pyautogui.moveTo(
                         x=x_move_to, y=y_move_to, duration=self._motion_time
                     )
+                    logger.info(f"Pointer moved to ({x_move_to}, {y_move_to}).")
                     sleep(self._sleep_time)
             except KeyboardInterrupt:
+                logger.debug(f"Caught KeyBoardInterrupt.")
                 break
 
     def move_the_mouse_pointer(self) -> None:
@@ -110,7 +125,5 @@ class Pointer:
                 "square": self._squared_movement,
             }[self._movement]()
         except KeyError:
-            print(
-                f"No {self._movement} movement applicable"
-            )  # TODO: Would be replaced with logging
+            logger.error(f"Caught KeyError for unknown movement input {self._movement}")
             raise
