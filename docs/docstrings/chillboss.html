@@ -245,6 +245,33 @@
 
 
 <span id="chillboss-loggers-module"></span><h2 id="module-chillboss.loggers">chillboss.loggers module<a class="headerlink" href="#module-chillboss.loggers" title="Permalink to this headline">¶</a></h2>
+<p>Custom loggers for ChillBoss.</p>
+<dl class="py class">
+<dt id="chillboss.loggers.ColorFormatter">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">chillboss.loggers.</span></code><code class="sig-name descname"><span class="pre">ColorFormatter</span></code><a class="reference internal" href="../_modules/chillboss/loggers.html#ColorFormatter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#chillboss.loggers.ColorFormatter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">logging.Formatter</span></code></p>
+<p>Custom Formatter for Colored logs based on the log level.</p>
+<dl class="py method">
+<dt id="chillboss.loggers.ColorFormatter.format">
+<code class="sig-name descname"><span class="pre">format</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">record</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">logging.LogRecord</span></span></em><span class="sig-paren">)</span> → <span class="pre">str</span><a class="reference internal" href="../_modules/chillboss/loggers.html#ColorFormatter.format"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#chillboss.loggers.ColorFormatter.format" title="Permalink to this definition">¶</a></dt>
+<dd><p>Custom format the log string to have colored.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>record</strong> (<em>logging.LogRecord</em>) – LogRecord of the log.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Formatted log string.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(str)</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py attribute">
+<dt id="chillboss.loggers.ColorFormatter.level_color">
+<code class="sig-name descname"><span class="pre">level_color</span></code><em class="property"><span class="pre">:</span> <span class="pre">dict</span></em><em class="property"> <span class="pre">=</span> <span class="pre">{10:</span> <span class="pre">'\x1b[34m',</span> <span class="pre">20:</span> <span class="pre">'\x1b[32m',</span> <span class="pre">30:</span> <span class="pre">'\x1b[33m',</span> <span class="pre">40:</span> <span class="pre">'\x1b[31m',</span> <span class="pre">50:</span> <span class="pre">'\x1b[31m'}</span></em><a class="headerlink" href="#chillboss.loggers.ColorFormatter.level_color" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+</dd></dl>
 
 
 <span id="chillboss-mouse-module"></span><h2 id="module-chillboss.mouse">chillboss.mouse module<a class="headerlink" href="#module-chillboss.mouse" title="Permalink to this headline">¶</a></h2>

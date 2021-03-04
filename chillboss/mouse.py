@@ -64,7 +64,7 @@ class Pointer:
     def _get_square_coordinates(
         self,
     ) -> Tuple[Tuple[int, int], Tuple[int, int], Tuple[int, int], Tuple[int, int]]:
-        """
+        """Calculate square coordinates.
 
         Returns:
             Tuple[Tuple[int, int], Tuple[int, int], Tuple[int, int], Tuple[int, int]] : Tuple consisting of tuples

@@ -12,6 +12,7 @@ python = "^3.6"
 PyAutogui = "^0.9.50"
 click = "^7.1.2"
 pyfiglet = "^0.8.post1"
+colorama = "^0.4.4"
 
 [tool.poetry.dev-dependencies]
 pytest = "^6.2"
