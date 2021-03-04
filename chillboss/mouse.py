@@ -93,7 +93,7 @@ class Pointer:
                 y_move_to: int
                 x_move_to, y_move_to = self._get_random_coordinates()
                 pyautogui.moveTo(x=x_move_to, y=y_move_to, duration=self._motion_time)
-                logger.debug(f"Pointer moved to ({x_move_to}, {y_move_to}).")
+                logger.info(f"Pointer moved to ({x_move_to}, {y_move_to}).")
                 sleep(self._sleep_time)
             except KeyboardInterrupt:
                 logger.debug(f"Caught KeyBoardInterrupt.")
@@ -111,7 +111,7 @@ class Pointer:
                     pyautogui.moveTo(
                         x=x_move_to, y=y_move_to, duration=self._motion_time
                     )
-                    logger.debug(f"Pointer moved to ({x_move_to}, {y_move_to}).")
+                    logger.info(f"Pointer moved to ({x_move_to}, {y_move_to}).")
                     sleep(self._sleep_time)
             except KeyboardInterrupt:
                 logger.debug(f"Caught KeyBoardInterrupt.")
