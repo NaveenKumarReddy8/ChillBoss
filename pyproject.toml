@@ -24,7 +24,7 @@ pytest-mock = "^3.5.1"
 flake8 = "^3.8.4"
 pydocstyle = "^5.1.1"
 isort = "^5.7.0"
-Sphinx = "^3.5.1"
+Sphinx = "^3.5.2"
 sphinx-material = {git = "https://github.com/bashtage/sphinx-material.git"}
 
 [tool.coverage.run]
