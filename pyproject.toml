@@ -15,6 +15,7 @@ click = "^7.1.2"
 pyfiglet = "^0.8.post1"
 colorama = "^0.4.4"
 emoji = "^1.2.0"
+importlib-metadata = "^4.0.1"
 
 [tool.poetry.dev-dependencies]
 pytest = "^6.2"
