@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "ChillBoss"
-version = "0.2.0"
+version = "0.3.0"
 description = "Let's chill, Pointer moves forever."
 authors = ["NaveenKumarReddy8 <mr.naveen8@gmail.com>"]
 license = "MIT"
@@ -14,6 +14,8 @@ PyAutogui = "^0.9.50"
 click = "^7.1.2"
 pyfiglet = "^0.8.post1"
 colorama = "^0.4.4"
+emoji = "^1.2.0"
+importlib-metadata = "^4.0.1"
 
 [tool.poetry.dev-dependencies]
 pytest = "^6.2"
