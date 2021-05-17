@@ -11,7 +11,7 @@ homepage = "https://naveenkumarreddy8.github.io/ChillBoss/"
 [tool.poetry.dependencies]
 python = "^3.6"
 PyAutogui = "^0.9.50"
-click = "^7.1.2"
+click = ">=7.1.2,<9.0.0"
 pyfiglet = "^0.8.post1"
 colorama = "^0.4.4"
 emoji = "^1.2.0"
