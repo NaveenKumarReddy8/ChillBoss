@@ -44,12 +44,21 @@
   <meta name="theme-color" content="#3f51b5">
   <script src="_static/javascripts/modernizr.js"></script>
   
+  <script>
+      window.ga = window.ga || function () {
+          (ga.q = ga.q || []).push(arguments)
+      };
+      ga.l = +new Date;
+      ga('create', 'UA-191161814-1', 'auto');
+      ga('send', 'pageview');
+  </script>
+  <script async src='https://www.google-analytics.com/analytics.js'></script>
   
   
     <title>Welcome to ChillBoss’s documentation! &#8212; ChillBoss 0.2.0 documentation</title>
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/material.css" type="text/css" />
-    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/material.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
@@ -238,7 +247,7 @@
 <h1 id="index--page-root">Welcome to ChillBoss’s documentation!<a class="headerlink" href="#index--page-root" title="Permalink to this headline">¶</a></h1>
 <p><a class="reference external" href="https://pepy.tech/project/chillboss"><img alt="Downloads" src="https://static.pepy.tech/personalized-badge/chillboss?period=total&amp;units=international_system&amp;left_color=blue&amp;right_color=green&amp;left_text=Total%20Downloads"/></a> <a class="reference external" href="https://pepy.tech/project/chillboss"><img alt="MonthlyDownloads" src="https://static.pepy.tech/personalized-badge/chillboss?period=month&amp;units=international_system&amp;left_color=blue&amp;right_color=green&amp;left_text=Downloads/Month"/></a> <a class="reference external" href="https://pepy.tech/project/chillboss"><img alt="WeeklyDownloads" src="https://static.pepy.tech/personalized-badge/chillboss?period=week&amp;units=international_system&amp;left_color=blue&amp;right_color=green&amp;left_text=Downloads/Week"/></a> <a class="reference external" href="https://github.com/NaveenKumarReddy8/ChillBoss/actions/workflows/main.yml"><img alt="Hygiene" src="https://github.com/NaveenKumarReddy8/ChillBoss/actions/workflows/main.yml/badge.svg"/></a>
 <a class="reference external" href="https://snyk.io/advisor/python/chillboss"><img alt="chillboss" src="https://snyk.io/advisor/python/chillboss/badge.svg"/></a> <a class="reference external" href="https://pypi.python.org/pypi/chillboss/"><img alt="PyPI version fury.io" src="https://badge.fury.io/py/chillboss.svg"/></a></p>
-<p>Version: 0.2.0</p>
+<p>Version: 0.3.0</p>
 <p>ChillBoss keeps your mouse moving to keep your status alive 😎.</p>
 <p>Homepage: <a class="reference external" href="https://naveenkumarreddy8.github.io/ChillBoss/">https://naveenkumarreddy8.github.io/ChillBoss/</a></p>
 
@@ -249,7 +258,7 @@
 </pre></div>
 </div>
 <div class="figure align-default">
-<img alt="ChillBoss Installation" src="https://media.giphy.com/media/gzccwAinTwGWRdkyu8/giphy.gif"/>
+<img alt="ChillBoss Installation" src="https://media.giphy.com/media/LaDjfP9xVZTT69EsMk/source.gif"/>
 </div>
 
 
@@ -259,19 +268,19 @@
 </div>
 <p>Command line argument accepted:</p>
 <ul class="simple">
-<li><p>–movement: <code class="docutils literal notranslate"><span class="pre">random</span></code> and <code class="docutils literal notranslate"><span class="pre">square</span></code> movements are accepted. Default
+<li><p>-m, –movement: <code class="docutils literal notranslate"><span class="pre">random</span></code> and <code class="docutils literal notranslate"><span class="pre">square</span></code> movements are accepted. Default
 set to <code class="docutils literal notranslate"><span class="pre">random</span></code>.</p></li>
-<li><p>–length: Accepted for <code class="docutils literal notranslate"><span class="pre">square</span></code> type of movement. Default set to
+<li><p>-l, –length: Accepted for <code class="docutils literal notranslate"><span class="pre">square</span></code> type of movement. Default set to
 <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
-<li><p>–sleeptime: Time to be taken till next movement. Default set to 30
+<li><p>-s, –sleeptime: Time to be taken till next movement. Default set to 30
 seconds.</p></li>
-<li><p>–motiontime: Time consumption of pointer to move from present
+<li><p>-mt, –motiontime: Time consumption of pointer to move from present
 coordinates to the next coordinates. Default set to 0 seconds.</p></li>
-<li><p>–verbose: Flag argument when given as input, sets the log level to
+<li><p>-v, –verbose: Flag argument when given as input, sets the log level to
 Debug, else Warning.</p></li>
 </ul>
 <div class="figure align-default">
-<img alt="ChillBoss Usage" src="https://media.giphy.com/media/DsYnp69mhQeKoAxu7x/giphy.gif"/>
+<img alt="ChillBoss Usage" src="https://media.giphy.com/media/7V9UuZIFNDryxzHEQM/source.gif"/>
 </div>
 <p>️</p>
 
@@ -308,7 +317,7 @@ Debug, else Warning.</p></li>
               
           </div>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 3.5.1.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.0.2.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

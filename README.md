@@ -7,7 +7,7 @@
 [![chillboss](https://snyk.io/advisor/python/chillboss/badge.svg)](https://snyk.io/advisor/python/chillboss)
 [![PyPI version fury.io](https://badge.fury.io/py/chillboss.svg)](https://pypi.python.org/pypi/chillboss/)
 
-Version: 0.2.0
+Version: 0.3.0
 
 ChillBoss keeps your mouse moving to keep your status alive 😎.
 
@@ -21,7 +21,7 @@ ChillBoss is published on PyPI: https://pypi.org/project/chillboss/
 pip install chillboss
 ```
 
-![ChillBoss Installation](https://media.giphy.com/media/gzccwAinTwGWRdkyu8/giphy.gif)
+![ChillBoss Installation](https://media.giphy.com/media/LaDjfP9xVZTT69EsMk/source.gif)
 
 Usage:
 
@@ -31,14 +31,14 @@ python -m chillboss
 
 Command line argument accepted:
 
-* --movement: `random` and `square` movements are accepted. Default set to `random`.
-* --length: Accepted for `square` type of movement. Default set to `None`.
-* --sleeptime: Time to be taken till next movement. Default set to 30 seconds.
-* --motiontime: Time consumption of pointer to move from present coordinates to the next coordinates. Default set to 0
+* -m, --movement: `random` and `square` movements are accepted. Default set to `random`.
+* -l, --length: Accepted for `square` type of movement. Default set to `None`.
+* -s, --sleeptime: Time to be taken till next movement. Default set to 30 seconds.
+* -mt, --motiontime: Time consumption of pointer to move from present coordinates to the next coordinates. Default set to 0
   seconds.
-* --verbose: Flag argument when given as input, sets the log level to Debug, else Warning.
+* -v, --verbose: Flag argument when given as input, sets the log level to Debug, else Warning.
 
-![ChillBoss Usage](https://media.giphy.com/media/DsYnp69mhQeKoAxu7x/giphy.gif)
+![ChillBoss Usage](https://media.giphy.com/media/7V9UuZIFNDryxzHEQM/source.gif)
 
 
 Made with love ❤️
