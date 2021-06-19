@@ -9,7 +9,7 @@ Welcome to ChillBoss's documentation!
 |Downloads| |MonthlyDownloads| |WeeklyDownloads| |Hygiene|
 |chillboss| |PyPI version fury.io|
 
-Version: 0.2.0
+Version: 0.3.0
 
 ChillBoss keeps your mouse moving to keep your status alive 😎.
 
@@ -24,7 +24,7 @@ ChillBoss is published on PyPI: https://pypi.org/project/chillboss/
 
     pip install chillboss
 
-.. figure:: https://media.giphy.com/media/gzccwAinTwGWRdkyu8/giphy.gif
+.. figure:: https://media.giphy.com/media/LaDjfP9xVZTT69EsMk/source.gif
    :alt: ChillBoss Installation
 
 
@@ -38,18 +38,18 @@ Usage
 
 Command line argument accepted:
 
--  --movement: ``random`` and ``square`` movements are accepted. Default
+-  -m, --movement: ``random`` and ``square`` movements are accepted. Default
    set to ``random``.
--  --length: Accepted for ``square`` type of movement. Default set to
+-  -l, --length: Accepted for ``square`` type of movement. Default set to
    ``None``.
--  --sleeptime: Time to be taken till next movement. Default set to 30
+-  -s, --sleeptime: Time to be taken till next movement. Default set to 30
    seconds.
--  --motiontime: Time consumption of pointer to move from present
+-  -mt, --motiontime: Time consumption of pointer to move from present
    coordinates to the next coordinates. Default set to 0 seconds.
--  --verbose: Flag argument when given as input, sets the log level to
+-  -v, --verbose: Flag argument when given as input, sets the log level to
    Debug, else Warning.
 
-.. figure:: https://media.giphy.com/media/DsYnp69mhQeKoAxu7x/giphy.gif
+.. figure:: https://media.giphy.com/media/7V9UuZIFNDryxzHEQM/source.gif
    :alt: ChillBoss Usage
 
 ️
