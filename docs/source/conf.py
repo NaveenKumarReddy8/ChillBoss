@@ -23,7 +23,7 @@ copyright = '2021, Naveen Kumar Reddy Pemmana (mr.naveen8@gmail.com)'
 author = 'Naveen Kumar Reddy Pemmana (mr.naveen8@gmail.com)'
 
 # The full version, including alpha/beta/rc tags
-release = '0.2.0'
+release = '0.3.0'
 
 
 # -- General configuration ---------------------------------------------------
