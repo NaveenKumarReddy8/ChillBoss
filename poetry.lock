@@ -373,7 +373,7 @@ python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
 
 [[package]]
 name = "pyautogui"
-version = "0.9.52"
+version = "0.9.53"
 description = "PyAutoGUI lets Python control the mouse and keyboard, and other GUI automation tasks. For Windows, macOS, and Linux, on Python 3 and 2."
 category = "main"
 optional = false
@@ -2435,7 +2435,7 @@ test = ["pytest", "pytest-cov", "html5lib", "cython", "typed-ast"]
 
 [[package]]
 name = "sphinx-material"
-version = "0.0.32+6.g3c3d153"
+version = "0.0.32+8.g7cf7a96"
 description = "Material sphinx theme"
 category = "dev"
 optional = false
@@ -2456,7 +2456,7 @@ dev = ["black (==19.10b0)"]
 type = "git"
 url = "https://github.com/bashtage/sphinx-material.git"
 reference = "master"
-resolved_reference = "3c3d1533a8ef09dad6987e06fc5375867c18c529"
+resolved_reference = "7cf7a969224cbe6e53fd2b8b9e6880fe228f2821"
 
 [[package]]
 name = "sphinxcontrib-applehelp"
@@ -2916,7 +2916,7 @@ py = [
     {file = "py-1.10.0.tar.gz", hash = "sha256:21b81bda15b66ef5e1a777a21c4dcd9c20ad3efd0b3f817e7a809035269e1bd3"},
 ]
 pyautogui = [
-    {file = "PyAutoGUI-0.9.52.tar.gz", hash = "sha256:a486cb6b818bcbcdf98b48d010c7cee964134fa394b756e8ce6e50d43b58ecc8"},
+    {file = "PyAutoGUI-0.9.53.tar.gz", hash = "sha256:d31de8f712218d90be7fc98091fce1a12a3e9196e0c814eb9afd73bb2ec97035"},
 ]
 pycodestyle = [
     {file = "pycodestyle-2.7.0-py2.py3-none-any.whl", hash = "sha256:514f76d918fcc0b55c6680472f0a37970994e07bbb80725808c17089be302068"},
