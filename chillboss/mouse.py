@@ -96,7 +96,7 @@ class Pointer:
                 logger.info(f"Pointer moved to ({x_move_to}, {y_move_to}).")
                 sleep(self._sleep_time)
             except KeyboardInterrupt:
-                logger.debug(f"Caught KeyBoardInterrupt.")
+                logger.debug("Caught KeyBoardInterrupt.")
                 break
 
     def _squared_movement(self) -> None:
@@ -114,7 +114,7 @@ class Pointer:
                     logger.info(f"Pointer moved to ({x_move_to}, {y_move_to}).")
                     sleep(self._sleep_time)
             except KeyboardInterrupt:
-                logger.debug(f"Caught KeyBoardInterrupt.")
+                logger.debug("Caught KeyBoardInterrupt.")
                 break
 
     def move_the_mouse_pointer(self) -> None:

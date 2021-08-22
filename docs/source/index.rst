@@ -9,7 +9,7 @@ Welcome to ChillBoss's documentation!
 |Downloads| |MonthlyDownloads| |WeeklyDownloads| |Hygiene|
 |chillboss| |PyPI version fury.io|
 
-Version: 0.3.0
+Version: 0.4.0
 
 ChillBoss keeps your mouse moving to keep your status alive 😎.
 
@@ -24,7 +24,7 @@ ChillBoss is published on PyPI: https://pypi.org/project/chillboss/
 
     pip install chillboss
 
-.. figure:: https://media.giphy.com/media/LaDjfP9xVZTT69EsMk/source.gif
+.. figure:: https://media.giphy.com/media/aDoezJuCfRnEf4KErq/source.gif
    :alt: ChillBoss Installation
 
 
@@ -34,7 +34,7 @@ Usage
 
 .. code:: shell
 
-    python -m chillboss
+    chillboss [options]
 
 Command line argument accepted:
 
@@ -49,7 +49,7 @@ Command line argument accepted:
 -  -v, --verbose: Flag argument when given as input, sets the log level to
    Debug, else Warning.
 
-.. figure:: https://media.giphy.com/media/7V9UuZIFNDryxzHEQM/source.gif
+.. figure:: https://media.giphy.com/media/TrlvEhASiYMqNZ7Gy9/source.gif
    :alt: ChillBoss Usage
 
 ️
