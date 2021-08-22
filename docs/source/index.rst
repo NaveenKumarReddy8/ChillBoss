@@ -27,6 +27,11 @@ ChillBoss is published on PyPI: https://pypi.org/project/chillboss/
 .. figure:: https://media.giphy.com/media/aDoezJuCfRnEf4KErq/source.gif
    :alt: ChillBoss Installation
 
+Note: On Linux you may need to install python3-tk python3-dev
+
+.. code:: shell
+
+    sudo apt-get install python3-tk python3-dev
 
 
 Usage
