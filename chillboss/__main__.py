@@ -62,7 +62,7 @@ def chill(
     print(figlet_format("ChillBoss"))
     print(f"Version: {__version__}")
     pointer.move_the_mouse_pointer()
-    print(emojize("\nThanks for using ChillBoss :red_heart:",variant="emoji_type"))
+    print(emojize("\nThanks for using ChillBoss :red_heart:", variant="emoji_type"))
 
 
 if __name__ == "__main__":
