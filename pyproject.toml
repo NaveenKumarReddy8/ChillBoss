@@ -1,12 +1,15 @@
 [tool.poetry]
 name = "ChillBoss"
-version = "0.3.0"
+version = "0.4.0"
 description = "Let's chill, Pointer moves forever."
 authors = ["NaveenKumarReddy8 <mr.naveen8@gmail.com>"]
 license = "MIT"
 readme = "README.md"
 repository = "https://github.com/NaveenKumarReddy8/ChillBoss"
 homepage = "https://naveenkumarreddy8.github.io/ChillBoss/"
+
+[tool.poetry.scripts]
+chillboss = "chillboss.__main__:chill"
 
 [tool.poetry.dependencies]
 python = "^3.6"
@@ -20,13 +23,13 @@ importlib-metadata = "^4.0.1"
 [tool.poetry.dev-dependencies]
 pytest = "^6.2"
 black = "^20.8b1"
-mypy = "^0.902"
+mypy = "^0.910"
 pytest-cov = "^2.12.1"
 pytest-mock = "^3.6.1"
 flake8 = "^3.9.2"
 pydocstyle = "^6.1.1"
 isort = "^5.8.0"
-Sphinx = "^4.0.2"
+Sphinx = "^4.1.1"
 sphinx-material = {git = "https://github.com/bashtage/sphinx-material.git"}
 
 [tool.coverage.run]

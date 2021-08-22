@@ -7,7 +7,7 @@
 [![chillboss](https://snyk.io/advisor/python/chillboss/badge.svg)](https://snyk.io/advisor/python/chillboss)
 [![PyPI version fury.io](https://badge.fury.io/py/chillboss.svg)](https://pypi.python.org/pypi/chillboss/)
 
-Version: 0.3.0
+Version: 0.4.0
 
 ChillBoss keeps your mouse moving to keep your status alive 😎.
 
@@ -21,12 +21,25 @@ ChillBoss is published on PyPI: https://pypi.org/project/chillboss/
 pip install chillboss
 ```
 
-![ChillBoss Installation](https://media.giphy.com/media/LaDjfP9xVZTT69EsMk/source.gif)
+---
+
+**NOTE**
+
+On Linux you may need to install python3-tk python3-dev
+
+```
+sudo apt-get install python3-tk python3-dev
+```
+
+---
+
+
+![ChillBoss Installation](https://media.giphy.com/media/aDoezJuCfRnEf4KErq/source.gif)
 
 Usage:
 
 ```shell
-python -m chillboss
+chillboss [options]
 ```
 
 Command line argument accepted:
@@ -38,7 +51,7 @@ Command line argument accepted:
   seconds.
 * -v, --verbose: Flag argument when given as input, sets the log level to Debug, else Warning.
 
-![ChillBoss Usage](https://media.giphy.com/media/7V9UuZIFNDryxzHEQM/source.gif)
+![ChillBoss Usage](https://media.giphy.com/media/TrlvEhASiYMqNZ7Gy9/source.gif)
 
 
 Made with love ❤️
