@@ -8,6 +8,9 @@ readme = "README.md"
 repository = "https://github.com/NaveenKumarReddy8/ChillBoss"
 homepage = "https://naveenkumarreddy8.github.io/ChillBoss/"
 
+[tool.poetry.scripts]
+chillboss = "chillboss.__main__:chill"
+
 [tool.poetry.dependencies]
 python = "^3.6"
 PyAutogui = "^0.9.50"
