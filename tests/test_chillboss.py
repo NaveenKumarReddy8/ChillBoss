@@ -3,4 +3,4 @@ def test_version():
     # pyautogui class before actual pyautogui module gets loaded to sys modules.
     from chillboss import __version__
 
-    assert __version__ == "0.3.0"
+    assert __version__ == "0.4.0"

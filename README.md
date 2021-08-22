@@ -7,7 +7,7 @@
 [![chillboss](https://snyk.io/advisor/python/chillboss/badge.svg)](https://snyk.io/advisor/python/chillboss)
 [![PyPI version fury.io](https://badge.fury.io/py/chillboss.svg)](https://pypi.python.org/pypi/chillboss/)
 
-Version: 0.3.0
+Version: 0.4.0
 
 ChillBoss keeps your mouse moving to keep your status alive 😎.
 
@@ -21,12 +21,17 @@ ChillBoss is published on PyPI: https://pypi.org/project/chillboss/
 pip install chillboss
 ```
 
+```note
+On linux you may need to install python3-tk python3-dev
+sudo apt-get install python3-tk python3-dev
+```
+
 ![ChillBoss Installation](https://media.giphy.com/media/LaDjfP9xVZTT69EsMk/source.gif)
 
 Usage:
 
 ```shell
-python -m chillboss
+chillboss [options]
 ```
 
 Command line argument accepted:
