@@ -45,18 +45,21 @@
   <meta name="theme-color" content="#3f51b5">
   <script src="_static/javascripts/modernizr.js"></script>
   
-  <script>
-      window.ga = window.ga || function () {
-          (ga.q = ga.q || []).push(arguments)
-      };
-      ga.l = +new Date;
-      ga('create', 'UA-191161814-1', 'auto');
-      ga('send', 'pageview');
-  </script>
-  <script async src='https://www.google-analytics.com/analytics.js'></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-191161814-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'UA-191161814-1');
+</script>
   
   
-    <title>Welcome to ChillBoss’s documentation! &#8212; ChillBoss 0.3.0 documentation</title>
+    <title>Welcome to ChillBoss’s documentation! &#8212; ChillBoss 0.4.0 documentation</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/material.css" />
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
@@ -88,7 +91,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="#" title="ChillBoss 0.3.0 documentation"
+        <a href="#" title="ChillBoss 0.4.0 documentation"
            class="md-header-nav__button md-logo">
           
             &nbsp;
@@ -174,7 +177,7 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="#" class="md-tabs__link">ChillBoss 0.3.0 documentation</a></li>
+          <li class="md-tabs__item"><a href="#" class="md-tabs__link">ChillBoss 0.4.0 documentation</a></li>
       </ul>
     </div>
   </nav>
@@ -186,13 +189,13 @@
               <div class="md-sidebar__inner">
                 <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="#" title="ChillBoss 0.3.0 documentation" class="md-nav__button md-logo">
+    <a href="#" title="ChillBoss 0.4.0 documentation" class="md-nav__button md-logo">
       
         <img src="_static/" alt=" logo" width="48" height="48">
       
     </a>
     <a href="#"
-       title="ChillBoss 0.3.0 documentation">ChillBoss</a>
+       title="ChillBoss 0.4.0 documentation">ChillBoss</a>
   </label>
     <div class="md-nav__source">
       <a href="https://github.com/NaveenKumarReddy8/ChillBoss" title="Go to repository" class="md-source" data-md-source="github">
@@ -248,7 +251,7 @@
 <h1 id="index--page-root">Welcome to ChillBoss’s documentation!<a class="headerlink" href="#index--page-root" title="Permalink to this headline">¶</a></h1>
 <p><a class="reference external" href="https://pepy.tech/project/chillboss"><img alt="Downloads" src="https://static.pepy.tech/personalized-badge/chillboss?period=total&amp;units=international_system&amp;left_color=blue&amp;right_color=green&amp;left_text=Total%20Downloads"/></a> <a class="reference external" href="https://pepy.tech/project/chillboss"><img alt="MonthlyDownloads" src="https://static.pepy.tech/personalized-badge/chillboss?period=month&amp;units=international_system&amp;left_color=blue&amp;right_color=green&amp;left_text=Downloads/Month"/></a> <a class="reference external" href="https://pepy.tech/project/chillboss"><img alt="WeeklyDownloads" src="https://static.pepy.tech/personalized-badge/chillboss?period=week&amp;units=international_system&amp;left_color=blue&amp;right_color=green&amp;left_text=Downloads/Week"/></a> <a class="reference external" href="https://github.com/NaveenKumarReddy8/ChillBoss/actions/workflows/main.yml"><img alt="Hygiene" src="https://github.com/NaveenKumarReddy8/ChillBoss/actions/workflows/main.yml/badge.svg"/></a>
 <a class="reference external" href="https://snyk.io/advisor/python/chillboss"><img alt="chillboss" src="https://snyk.io/advisor/python/chillboss/badge.svg"/></a> <a class="reference external" href="https://pypi.python.org/pypi/chillboss/"><img alt="PyPI version fury.io" src="https://badge.fury.io/py/chillboss.svg"/></a></p>
-<p>Version: 0.3.0</p>
+<p>Version: 0.4.0</p>
 <p>ChillBoss keeps your mouse moving to keep your status alive 😎.</p>
 <p>Homepage: <a class="reference external" href="https://naveenkumarreddy8.github.io/ChillBoss/">https://naveenkumarreddy8.github.io/ChillBoss/</a></p>
 </section>
@@ -259,12 +262,12 @@
 </pre></div>
 </div>
 <figure class="align-default">
-<img alt="ChillBoss Installation" src="https://media.giphy.com/media/LaDjfP9xVZTT69EsMk/source.gif"/>
+<img alt="ChillBoss Installation" src="https://media.giphy.com/media/aDoezJuCfRnEf4KErq/source.gif"/>
 </figure>
 </section>
 <section id="usage">
 <h1 id="usage">Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h1>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>python -m chillboss
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>chillboss <span class="o">[</span>options<span class="o">]</span>
 </pre></div>
 </div>
 <p>Command line argument accepted:</p>
@@ -281,7 +284,7 @@ coordinates to the next coordinates. Default set to 0 seconds.</p></li>
 Debug, else Warning.</p></li>
 </ul>
 <figure class="align-default">
-<img alt="ChillBoss Usage" src="https://media.giphy.com/media/7V9UuZIFNDryxzHEQM/source.gif"/>
+<img alt="ChillBoss Usage" src="https://media.giphy.com/media/TrlvEhASiYMqNZ7Gy9/source.gif"/>
 </figure>
 <p>️</p>
 </section>
@@ -318,7 +321,7 @@ Debug, else Warning.</p></li>
               
           </div>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.0.2.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.1.1.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>
