@@ -25,7 +25,7 @@ pip install chillboss
 
 **NOTE**
 
-On linux you may need to install python3-tk python3-dev
+On Linux you may need to install python3-tk python3-dev
 
 ```
 sudo apt-get install python3-tk python3-dev
