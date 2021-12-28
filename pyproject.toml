@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "ChillBoss"
-version = "0.4.0"
+version = "0.4.1"
 description = "Let's chill, Pointer moves forever."
 authors = ["NaveenKumarReddy8 <mr.naveen8@gmail.com>"]
 license = "MIT"
@@ -30,7 +30,7 @@ flake8 = "^3.9.2"
 pydocstyle = "^6.1.1"
 isort = "^5.8.0"
 Sphinx = "^4.1.1"
-sphinx-material = {git = "https://github.com/bashtage/sphinx-material.git"}
+sphinx-material = {git = "https://github.com/bashtage/sphinx-material.git", rev = "main"}
 
 [tool.coverage.run]
 source = ["chillboss"]
