@@ -59,7 +59,7 @@
 </script>
   
   
-    <title>chillboss package &#8212; ChillBoss 0.4.0 documentation</title>
+    <title>chillboss package &#8212; ChillBoss 0.4.1 documentation</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/material.css" />
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
@@ -91,7 +91,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../index.html" title="ChillBoss 0.4.0 documentation"
+        <a href="../index.html" title="ChillBoss 0.4.1 documentation"
            class="md-header-nav__button md-logo">
           
             &nbsp;
@@ -113,7 +113,7 @@
 <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
-    <form class="md-search__form" action="../search.html" method="GET" name="search">
+    <form class="md-search__form" action="../search.html" method="get" name="search">
       <input type="text" class="md-search__input" name="q" placeholder="Search"
              autocapitalize="off" autocomplete="off" spellcheck="false"
              data-md-component="query" data-md-state="active">
@@ -177,7 +177,7 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">ChillBoss 0.4.0 documentation</a></li>
+          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">ChillBoss 0.4.1 documentation</a></li>
       </ul>
     </div>
   </nav>
@@ -189,13 +189,13 @@
               <div class="md-sidebar__inner">
                 <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../index.html" title="ChillBoss 0.4.0 documentation" class="md-nav__button md-logo">
+    <a href="../index.html" title="ChillBoss 0.4.1 documentation" class="md-nav__button md-logo">
       
         <img src="../_static/" alt=" logo" width="48" height="48">
       
     </a>
     <a href="../index.html"
-       title="ChillBoss 0.4.0 documentation">ChillBoss</a>
+       title="ChillBoss 0.4.1 documentation">ChillBoss</a>
   </label>
     <div class="md-nav__source">
       <a href="https://github.com/NaveenKumarReddy8/ChillBoss" title="Go to repository" class="md-source" data-md-source="github">
@@ -229,11 +229,11 @@
               <ul class="md-nav__list">
         <li class="md-nav__item"><a href="#submodules" class="md-nav__link">Submodules</a>
         </li>
-        <li class="md-nav__item"><a href="#module-chillboss.loggers" class="md-nav__link">chillboss.loggers module</a>
+        <li class="md-nav__item"><a href="#chillboss-loggers-module" class="md-nav__link">chillboss.loggers module</a>
         </li>
-        <li class="md-nav__item"><a href="#module-chillboss.mouse" class="md-nav__link">chillboss.mouse module</a>
+        <li class="md-nav__item"><a href="#chillboss-mouse-module" class="md-nav__link">chillboss.mouse module</a>
         </li>
-        <li class="md-nav__item"><a href="#module-chillboss" class="md-nav__link">Module contents</a>
+        <li class="md-nav__item"><a href="#module-contents" class="md-nav__link">Module contents</a>
         </li></ul>
             </nav>
         </li>
@@ -256,65 +256,14 @@
 <section id="submodules">
 <h2 id="submodules">Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
 </section>
-<section id="module-chillboss.loggers">
-<span id="chillboss-loggers-module"></span><h2 id="module-chillboss.loggers">chillboss.loggers module<a class="headerlink" href="#module-chillboss.loggers" title="Permalink to this headline">¶</a></h2>
-<p>Custom loggers for ChillBoss.</p>
-<dl class="py class">
-<dt class="sig sig-object py" id="chillboss.loggers.ColorFormatter">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">chillboss.loggers.</span></span><span class="sig-name descname"><span class="pre">ColorFormatter</span></span><a class="reference internal" href="../_modules/chillboss/loggers.html#ColorFormatter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#chillboss.loggers.ColorFormatter" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">logging.Formatter</span></code></p>
-<p>Custom Formatter for Colored logs based on the log level.</p>
-<dl class="py method">
-<dt class="sig sig-object py" id="chillboss.loggers.ColorFormatter.format">
-<span class="sig-name descname"><span class="pre">format</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">record</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">logging.LogRecord</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="../_modules/chillboss/loggers.html#ColorFormatter.format"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#chillboss.loggers.ColorFormatter.format" title="Permalink to this definition">¶</a></dt>
-<dd><p>Custom format the log string to have colored.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>record</strong> (<em>logging.LogRecord</em>) – LogRecord of the log.</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Formatted log string.</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>(str)</p>
-</dd>
-</dl>
-</dd></dl>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="chillboss.loggers.ColorFormatter.level_color">
-<span class="sig-name descname"><span class="pre">level_color</span></span><em class="property"><span class="pre">:</span> <span class="pre">dict</span></em><em class="property"> <span class="pre">=</span> <span class="pre">{10:</span> <span class="pre">'\x1b[34m',</span> <span class="pre">20:</span> <span class="pre">'\x1b[32m',</span> <span class="pre">30:</span> <span class="pre">'\x1b[33m',</span> <span class="pre">40:</span> <span class="pre">'\x1b[31m',</span> <span class="pre">50:</span> <span class="pre">'\x1b[31m'}</span></em><a class="headerlink" href="#chillboss.loggers.ColorFormatter.level_color" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-</dd></dl>
+<section id="chillboss-loggers-module">
+<h2 id="chillboss-loggers-module">chillboss.loggers module<a class="headerlink" href="#chillboss-loggers-module" title="Permalink to this headline">¶</a></h2>
 </section>
-<section id="module-chillboss.mouse">
-<span id="chillboss-mouse-module"></span><h2 id="module-chillboss.mouse">chillboss.mouse module<a class="headerlink" href="#module-chillboss.mouse" title="Permalink to this headline">¶</a></h2>
-<p>Interact with Pointer.</p>
-<dl class="py class">
-<dt class="sig sig-object py" id="chillboss.mouse.Pointer">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">chillboss.mouse.</span></span><span class="sig-name descname"><span class="pre">Pointer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">movement</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'random'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">length</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sleep_time</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">30</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">motion_time</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/chillboss/mouse.html#Pointer"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#chillboss.mouse.Pointer" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>Driver for mouse pointer movement.</p>
-<dl class="py method">
-<dt class="sig sig-object py" id="chillboss.mouse.Pointer.move_the_mouse_pointer">
-<span class="sig-name descname"><span class="pre">move_the_mouse_pointer</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/chillboss/mouse.html#Pointer.move_the_mouse_pointer"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#chillboss.mouse.Pointer.move_the_mouse_pointer" title="Permalink to this definition">¶</a></dt>
-<dd><p>Adapter to call movement method accordingly.</p>
-</dd></dl>
-</dd></dl>
+<section id="chillboss-mouse-module">
+<h2 id="chillboss-mouse-module">chillboss.mouse module<a class="headerlink" href="#chillboss-mouse-module" title="Permalink to this headline">¶</a></h2>
 </section>
-<section id="module-chillboss">
-<span id="module-contents"></span><h2 id="module-chillboss">Module contents<a class="headerlink" href="#module-chillboss" title="Permalink to this headline">¶</a></h2>
-<p>ChillBoss package.</p>
-<dl class="py class">
-<dt class="sig sig-object py" id="chillboss.Pointer">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">chillboss.</span></span><span class="sig-name descname"><span class="pre">Pointer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">movement</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'random'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">length</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sleep_time</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">30</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">motion_time</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/chillboss/mouse.html#Pointer"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#chillboss.Pointer" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>Driver for mouse pointer movement.</p>
-<dl class="py method">
-<dt class="sig sig-object py" id="chillboss.Pointer.move_the_mouse_pointer">
-<span class="sig-name descname"><span class="pre">move_the_mouse_pointer</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/chillboss/mouse.html#Pointer.move_the_mouse_pointer"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#chillboss.Pointer.move_the_mouse_pointer" title="Permalink to this definition">¶</a></dt>
-<dd><p>Adapter to call movement method accordingly.</p>
-</dd></dl>
-</dd></dl>
+<section id="module-contents">
+<h2 id="module-contents">Module contents<a class="headerlink" href="#module-contents" title="Permalink to this headline">¶</a></h2>
 </section>
 </section>
 
@@ -341,7 +290,7 @@
               
           </div>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.1.1.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.3.2.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

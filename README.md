@@ -7,7 +7,7 @@
 [![chillboss](https://snyk.io/advisor/python/chillboss/badge.svg)](https://snyk.io/advisor/python/chillboss)
 [![PyPI version fury.io](https://badge.fury.io/py/chillboss.svg)](https://pypi.python.org/pypi/chillboss/)
 
-Version: 0.4.0
+Version: 0.4.1
 
 ChillBoss keeps your mouse moving to keep your status alive 😎.
 
