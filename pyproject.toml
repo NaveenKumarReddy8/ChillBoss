@@ -31,6 +31,7 @@ pydocstyle = "^6.1.1"
 isort = "^5.8.0"
 Sphinx = "^4.1.1"
 sphinx-material = {git = "https://github.com/bashtage/sphinx-material.git", rev = "main"}
+coverage = {extras = ["toml"], version = "^6.2"}
 
 [tool.coverage.run]
 source = ["chillboss"]
