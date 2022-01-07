@@ -9,7 +9,7 @@ Welcome to ChillBoss's documentation!
 |Downloads| |MonthlyDownloads| |WeeklyDownloads| |Hygiene|
 |chillboss| |PyPI version fury.io|
 
-Version: 0.4.0
+Version: 0.4.1
 
 ChillBoss keeps your mouse moving to keep your status alive 😎.
 
